@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Flexbox 布局</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		@media screen and (max-width: 640px) {
+			.flex-container {
+				display: flex;
+				flex-flow: wrap;
+				align-items: flex-start;
+			}
+			.lg {
+				order: -1;
+			}
+		}
+		.flex-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+		}
+		.flex-item {
+			width: 150px;
+			border: 1px solid #f00;
+			margin: 20px;
+		}
+		.md {
+			height: 120px;
+		}
+		.sm {
+			height: 100px;
+		}
+		.xs {
+			height: 40px;
+		}
+		.lg {
+			height: 200px;
+			border: 1px solid blue;
+		}
+		
+	</style>
+</head>
+<body>
+<div class="flex-container">
+	<div class="md flex-item">md</div>
+	<div class="sm flex-item">sm</div>
+	<div class="xs flex-item">xs</div>
+	<div class="lg flex-item">lg</div>
+</div>
+</body>
+</html>
