@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>三栏式布局</title>
+	<style>
+	/* RESET */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+	/* BASICS */
+	* {
+		font-family: "Microsoft Yahei", Ariel, sans-serif;
+		font-size: 14px;
+	}
+	span {
+		font-size: 15px;
+	}
+	section {
+		background-color: #fff;
+		border: 1px solid #999;
+	}
+	img {
+		display: block;
+		width: 80px;
+		height: 80px;
+		background-color: #DFDFDF;
+	}
+
+	/* STYLE */
+	/* container */
+	.container {
+		width: 80%;
+		margin: 20px auto 0;
+		padding: 20px;
+		background-color: #eee;
+		border: 1px solid #999;
+		overflow: auto;
+	}
+
+	/* profile */
+	.profile {
+		float: left;
+		width: 200px;
+		padding: 20px;
+	}
+	.profile img {
+		float: left;
+		width: 80px;
+		height: 80px;
+	}
+	.profile span {
+		float: left;
+		margin-left: 10px;
+	}
+
+	/* main */
+	.main {
+		margin-left:220px;
+		margin-right:140px;
+		padding: 10px;
+	}
+	.main h1, .main p {
+		margin: 5px 5px;
+		line-height: 25px;
+	}
+	.main p {
+		text-indent: 2em;
+	}
+
+	/* members */
+	.members {
+		float: right;
+		width: 120px;
+		padding: 10px 8px;
+	}
+	.members img {
+		width: 80px;
+		height: 80px;
+		margin: 0 auto;
+		margin-bottom: 8px;
+	}
+	.members img:last-child {
+		margin-bottom: 0;
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+	<section class="profile">
+		<img src="images/dw.jpg" alt="">
+		<span>神秘博士</span>
+	</section>
+	<section class="members">
+		<img src="images/m1.png" alt="">
+		<img src="images/m2.png" alt="">
+		<img src="images/m3.png" alt="">
+		<img src="images/m4.png" alt="">
+		<img src="images/m5.png" alt="">
+	</section>
+	<section class="main">
+		<h1>介绍</h1>
+		<p>《神秘博士》是英国广播公司制作的一部科幻电视剧，讲述博士的时间管理者的冒险经历。他乘坐他的TARDIS探索宇宙，这艘飞船的外观如同在该剧首播的1963年时在英国随处可见的蓝色警亭。博士同一连串的同伴一道，在面对各种敌人的同时，拯救文明、帮助普通人、纠正错误。</p>
+		<h1>概述</h1>
+		<p>这部被吉尼斯世界纪录大全列为世界上最长的科幻电视系列剧，从其整体播出收视率、DVD和书籍出售、iTunes下载量、“非法下载”来看，也被列入有史以来“最成功”的科幻电视系列剧。此片开播之初，其充满想像力的剧情、低成本却有创意的特效及前卫的电音配乐（英国广播公司音效工作室原创）等原因都让它备受各界肯定。这个节目在大不列颠被认为是英国流行文化中占有相当重要的地位的一部分，在别的地方也成为了一个邪典电视喜好。这个节目影响了好几代英国电视界专业人士，他们中很多人从小便看它长大。许多影评人和普罗大众赞同这是英国电视史上最好的电视节目之一，曾赢得包括英国影艺学院电影电视奖最佳电视剧奖、从2005年到2010年的5次英国戏剧类国家电视奖。
+		博士目前已有13位男演员担纲演出，当由一位演员换成另一位演员时，这个改变称为重生，而博士的身体、相貌会改变，某种程度上，性格也会随之改变。尽管每个演员诠释的方式都不同，甚至有时不同的化身会相遇，但他们都定义成同一个角色。博士目前由彼得·卡帕尔蒂扮演，他在马特·史密斯之后接演这个角色。
+		</p>
+	</section>
+</div>
+</body>
+</html>
