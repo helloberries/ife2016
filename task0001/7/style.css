@@ -251,9 +251,13 @@ article, aside, footer, header, main, nav, section, p {
 /*world-picbox*/
 .world-picbox {
     position: relative;
-    width: 60%;
+    width: 70%;
     height: 100%;
     background-color: yellowgreen;
+}
+.world-picbox img {
+    width: 100%;
+    height: 100%;
 }
 .world-picbox .world-picbox-content {
     position: absolute;
@@ -274,7 +278,8 @@ article, aside, footer, header, main, nav, section, p {
 }
 /*world-content*/
 .world-content {
-    width: 37%;
+    position: relative;
+    width: 30%;
     height: 100%;
     padding: 165px 70px;
     background-color: #fff;
@@ -320,19 +325,97 @@ article, aside, footer, header, main, nav, section, p {
 .world-content:before {
     position: absolute;
     z-index: 1;
+    top: 50%;
+    left: -26px;
     content: '';
     width: 0;
     height: 0;
     overflow: hidden;
-    border: 25px solid transparent;
-    border-right-color: red;
+    border-color: transparent #fff transparent transparent;
+    border-width: 15px 26px 15px 0;
+    border-style: solid;
+
 }
 /*century*/
 .century {
     position: relative;
     width: 100%;
     height: 523px;
-    background-color: pink;
+}
+.seemore {
+    width: 70%;
+    height: 100%;
+}
+.seemorelt, .seemorert {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+.seemore h2:first-child {
+    margin-top: 170px;
+}
+.seemore div:before {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    margin-left: -15px;
+    content: '';
+    width: 30px;
+    height: 2px;
+}
+.seemorelt:before {
+    background-color: #fff;
+}
+.seemorert:before {
+    background-color: #aaa;
+}
+.seemore a {
+    width: 170px;
+    height: 40px;
+    margin-top: 50px;
+    line-height: 40px;
+}
+.seemorelt {
+    color: #fff;
+}
+.seemorert {
+    color: #000;
+}
+.seemorelt a{
+    color: #fff;
+    border: 1px solid #fff;
+}
+.seemorert a {
+    color: #E7504D;
+    border: 1px solid #E7504D;
+}
+.seemorelt {
+    background-color: #E7504D;
+}
+.seemorert {
+    background-color: #fff;
+}
+.century-picbox {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+}
+/*三角形*/
+.century-picbox:before {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    content: '';
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-color: transparent transparent transparent #fff;
+    border-width: 15px 0 15px 26px;
+    border-style: solid;
+
 }
 /* newtime ends*/
 
