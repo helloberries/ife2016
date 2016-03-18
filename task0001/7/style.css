@@ -1,0 +1,162 @@
+/*
+ *   RESET: 基础格式
+ *   BASICS: 字体、字号、无论浏览器窗口大小都占满全屏的设置
+ *   STYLE: 样式
+ */
+
+
+
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a, img {
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+}
+.fl {
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+/* BASICS */
+/* fonts */
+* {
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+.logo {
+    font-size: 20px;
+}
+.nav, .login {
+    font-size: 14px;
+}
+/* 占满全屏 */
+.top, .banner, .intro,
+.slogan, .map, .citynews,
+.newtime, .volunteer, .footer {
+    width: 100%;
+}
+
+/* STYLE */
+/* top */
+.top {
+    position: relative;
+    height: 55px;
+    background-color: #fff;
+}
+/*logo*/
+.logo {
+    height: 55px;
+    width: 164px;
+    padding-left: 60px;
+    line-height: 55px;
+    background: url("images/icons/logo.png") left center no-repeat;
+    background-size: 30%;
+    background-origin: content-box;
+}
+.logo a {
+    margin-left: 38px;
+}
+.logo a:link, .logo a:visited {
+    color: #383838;
+    letter-spacing: 2px;
+}
+/*nav*/
+.nav {
+    position: absolute;
+    height: 20px;
+    top: 50%;
+    right: 90px;
+    margin-top: -10px;
+}
+.nav a {
+    margin-left: -8px;
+    padding: 0 20px 15px;
+}
+.nav a:link, .nav a:visited {
+    color: #8D8E92;
+}
+.nav a:hover, .nav a:active {
+    color: #E7504D;
+    border-bottom: 4px solid #E7504D;
+}
+#on {
+    color: #E7504D;
+    border-bottom: 4px solid #E7504D;
+}
+/*login*/
+.login {
+    position: absolute;
+    height: 20px;
+    top: 50%;
+    right: 50px;
+    margin-top: -10px;
+}
+/* top ends */
+
+/* banner */
+.banner {
+    height: 690px;
+}
+.banner img {
+    width: 100%;
+}
+/* banner ends */
+
+/* intro */
+.intro {
+    height: 250px;
+    background-color: #f1bcff;
+}
+/* intro ends */
+
+/* slogan */
+.slogan {
+    height: 360px;
+    background-color: #a9eee9;
+}
+/* slogan ends */
+
+/* map */
+.map {
+    height: 340px;
+}
+.map img {
+    width: 100%;
+}
+/* map ends */
+
+/* citynews */
+.citynews {
+    height: 640px;
+    background-color: #ecffa4;
+}
+/* citynews ends */
+
+/* newtime */
+.newtime {
+    height: 1090px;
+    background-color: #ffdca6;
+}
+/* newtime ends*/
+
+/* volunteer */
+.volunteer {
+    height: 750px;
+    background-color: #f2aeae;
+}
+/* volunteer ends */
+
+/* footer */
+.footer {
+    height: 420px;
+    background-color: #32363E;
+}
+/* footer ends */
