@@ -55,6 +55,9 @@
 .world-content .morebtn {
     font-size: 12px;
 }
+.century .seemore h2, .century .seemore a{
+    font-size: 20px;
+}
 
 /* 占满全屏 */
 .top, .banner, .intro,
