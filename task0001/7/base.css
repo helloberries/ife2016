@@ -1,0 +1,64 @@
+/*
+ *   BASE.CSS: 字体、字号、无论浏览器窗口大小都占满全屏的设置
+ */
+
+/* fonts */
+* {
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    font-weight: normal;
+}
+.logo {
+    font-size: 20px;
+}
+.nav, .login {
+    font-size: 14px;
+}
+.banner h1 {
+    font-size: 60px;
+}
+.banner h2 {
+    font-size: 20px;
+}
+.banner .inner .start-btn {
+    font-size: 30px;
+}
+.intro .detail p {
+    font-size: 14px;
+}
+.slogan h1 {
+    font-size: 54px;
+}
+.citynews h3 {
+    font-size: 16px;
+}
+.citynews h4 {
+    font-size: 12px;
+}
+.shanghai h3 {
+    font-size: 20px;
+}
+.world-picbox .world-picbox-content h1{
+    font-size: 158px;
+}
+.world-picbox .world-picbox-content h2 {
+    font-size: 50px;
+}
+.world-picbox .world-picbox-content p {
+    font-size: 24px;
+}
+.world-content h3 {
+    font-size: 20px;
+}
+.world-content p {
+    font-size: 14px;
+}
+.world-content .morebtn {
+    font-size: 12px;
+}
+
+/* 占满全屏 */
+.top, .banner, .intro,
+.slogan, .map, .citynews,
+.newtime, .volunteer, .footer {
+    width: 100%;
+}

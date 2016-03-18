@@ -1,11 +1,9 @@
+@import url(base.css);
+
 /*
  *   RESET: 基础格式
- *   BASICS: 字体、字号、无论浏览器窗口大小都占满全屏的设置
  *   STYLE: 样式
  */
-
-
-
 
 /* RESET */
 * {
@@ -19,6 +17,15 @@ a, img {
 a {
     text-decoration: none;
 }
+ul, li {
+    list-style: none;
+}
+li {
+    display: inline-block;
+}
+article, aside, footer, header, main, nav, section, p {
+    display: block;
+}
 .fl {
     float: left;
 }
@@ -26,28 +33,12 @@ a {
     float: right;
 }
 
-/* BASICS */
-/* fonts */
-* {
-    font-family: "Microsoft YaHei", Arial, sans-serif;
-}
-.logo {
-    font-size: 20px;
-}
-.nav, .login {
-    font-size: 14px;
-}
-/* 占满全屏 */
-.top, .banner, .intro,
-.slogan, .map, .citynews,
-.newtime, .volunteer, .footer {
-    width: 100%;
-}
-
 /* STYLE */
 /* top */
 .top {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 55px;
     background-color: #fff;
 }
@@ -70,80 +61,278 @@ a {
 }
 /*nav*/
 .nav {
-    position: absolute;
-    height: 20px;
-    top: 50%;
-    right: 90px;
-    margin-top: -10px;
+    height: 55px;
+    margin-right: 65px;
+    overflow: auto;
+}
+.nav ul {
+    
+}
+.nav ul li {
+    padding: 0 20px;
+    /*margin-right: 10px;*/
+    height: 55px;
 }
 .nav a {
-    margin-left: -8px;
-    padding: 0 20px 15px;
+    height: 55px;
+    line-height:55px;
 }
 .nav a:link, .nav a:visited {
-    color: #8D8E92;
+    color: #787A82;
 }
-.nav a:hover, .nav a:active {
+.nav li:last-child {
+    padding: 0;
+}
+.nav li:not(:last-child):hover{
     color: #E7504D;
     border-bottom: 4px solid #E7504D;
 }
-#on {
+.nav a:hover {
     color: #E7504D;
+}
+.nav li.active {
     border-bottom: 4px solid #E7504D;
+}
+.nav li.active a {
+    color: #E7504D;
 }
 /*login*/
-.login {
-    position: absolute;
-    height: 20px;
-    top: 50%;
-    right: 50px;
-    margin-top: -10px;
+.nav li:last-child {
+    width: 50px;
+    text-align: right;
+    background: url("images/icons/login.png") left center no-repeat;
+    background-origin: content-box;
+}
+.nav li:last-child a:link, .nav li:last-child a:visited {
+    color: #E7504D;
 }
 /* top ends */
 
 /* banner */
 .banner {
     height: 690px;
+    background: url("images/banner.png") 0 0 no-repeat;
+    background-size: cover;
+    color: #fff;
 }
-.banner img {
-    width: 100%;
+.banner .inner {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 224px;
+}
+.banner .inner h1 {
+    margin-left: -10px;
+}
+.banner .inner h2 {
+    margin-top: 30px;
+    line-height: 30px;
+}
+.banner .inner .start-btn {
+    width: 330px;
+    height: 65px;
+    margin-top: 60px;
+    line-height: 65px;
+    text-align: center;
+    color: #fff;
+    background-color: #E7504D;
 }
 /* banner ends */
 
 /* intro */
 .intro {
     height: 250px;
-    background-color: #f1bcff;
+}
+.intro .detail {
+    width: 25%;
+    height: 100%;
+}
+.circle {
+    background: url("images/icons/circle.png") center 20% no-repeat;
+}
+.intro .flag {
+    background: url("images/icons/flag.png") center 20% no-repeat;
+}
+.intro .flower {
+    background: url("images/icons/flower.png") center 20% no-repeat;
+}
+.intro .square {
+    background: url("images/icons/square.png") center 20% no-repeat;
+}
+.intro .detail p {
+    height: 50px;
+    width: 100%;
+    margin-top: 50%;
+    text-align: center;
+    color: #767676;
+}
+.intro .detail:not(:last-child) p {
+    border-right: 2px solid #aaa;
 }
 /* intro ends */
 
 /* slogan */
 .slogan {
     height: 360px;
-    background-color: #a9eee9;
+    background-color: #EDECEC;
+    text-align: center;
+}
+.slogan h1 {
+    padding-top: 225px;
+    color: #a6a6a6;
+    background: url("images/icons/logo.png") center 30% no-repeat;
 }
 /* slogan ends */
 
 /* map */
 .map {
     height: 340px;
-}
-.map img {
-    width: 100%;
+    background: url("images/map.png") no-repeat;
+    background-size: cover;
 }
 /* map ends */
 
 /* citynews */
 .citynews {
     height: 640px;
-    background-color: #ecffa4;
+    background-color: #F7F7F7;
+}
+.citynews .inner {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+.act {
+    padding: 10px 6px;
+    text-align: center;
+}
+.act .newspic {
+    margin-bottom: 10px;
+    padding: 10px 6px;
+    background-color: #fff;
+    border: 1px solid #CECFCE;
+}
+.act:not(:last-child) {
+    margin-right: 36px;
+}
+.citynews h3 {
+    color: #000;
+}
+.citynews h4 {
+    color: #B5B5B5;
+}
+/* shanghai */
+.shanghai {
+    text-align: center;
+}
+.shanghai h3 {
+    /* ? 如何让文字紧靠两端 */
+    letter-spacing: 32px;
+    margin:0 auto;
+}
+.shanghai .newspic {
+    margin-top: 10px;
 }
 /* citynews ends */
 
 /* newtime */
 .newtime {
     height: 1090px;
+    /*background-color: ;*/
+}
+/*world*/
+.world {
+    position: relative;
+    width: 100%;
+    height: 567px;
     background-color: #ffdca6;
+}
+/*world-picbox*/
+.world-picbox {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    background-color: yellowgreen;
+}
+.world-picbox .world-picbox-content {
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 30%;
+    color: #fff;
+    text-align: center;
+}
+.world-picbox .world-picbox-content h1 {
+    margin-top: -40px;
+}
+.world-picbox .world-picbox-content p {
+    width: 170px;
+    margin: 0 auto;
+    line-height: 30px;
+    text-align: left;
+}
+/*world-content*/
+.world-content {
+    width: 37%;
+    height: 100%;
+    padding: 165px 70px;
+    background-color: #fff;
+    text-align: center;
+}
+.world-content h3 span {
+    color: #E7504D;
+}
+.world-content p {
+    margin-top: 30px;
+    line-height: 30px;
+    text-align: left;
+    color: #BFBFBE;
+}
+.world-content .morebtn {
+    width: 105px;
+    height: 35px;
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid #E7504D;
+}
+.world-content .morebtn:link, .world-content .morebtn:visited {
+    color: #E7504D;
+}
+.world-picbox-nav {
+    margin-top: 24px;
+}
+.world-picbox-nav li a {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #929292;
+    background-color: #fff;
+}
+.world-picbox-nav li:not(:last-child) {
+    margin-right: 12px;
+}
+.world-picbox-nav li a.on {
+    background-color: #929292;
+}
+/*三角形*/
+.world-content:before {
+    position: absolute;
+    z-index: 1;
+    content: '';
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 25px solid transparent;
+    border-right-color: red;
+}
+/*century*/
+.century {
+    position: relative;
+    width: 100%;
+    height: 523px;
+    background-color: pink;
 }
 /* newtime ends*/
 
