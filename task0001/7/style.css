@@ -50,6 +50,7 @@ body {
     align-items: center;
     height: 55px;
     background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,.3);
 }
 /*logo*/
 .logo {
@@ -571,24 +572,40 @@ body {
     width: 40%;
     height: 80%;
     margin: 0 auto;
+    padding-top: 90px;
     color: #fff;
     text-align: center;
 }
+.contact h1 {
+    line-height: 50px;
+}
+.contact p {
+    line-height: 21px;
+}
 .contact .emailform {
     width: 510px;
+    margin: 0 auto;
+    padding: 24px 0;
 }
 .contact #email {
     width: 80%;
     height: 40px;
+    text-indent: 1em;
 }
 .contact #submit {
-    width: 80px;
+    width: 20%;
     height: 40px;
     margin-left: -10px;
+    background-color: #6F7178;
+    color: #fff;
+    cursor: pointer;
 }
 .contact .sns a {
     width: 30px;
     height: 30px;
+}
+.contact .sns a:not(:last-child) {
+    margin-right: 15px;
 }
 .contact .sns .qq {
     background: url("images/icons/qq.png") no-repeat;
