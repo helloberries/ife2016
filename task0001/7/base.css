@@ -28,6 +28,18 @@
 .slogan h1 {
     font-size: 54px;
 }
+.map .inner h1 {
+    font-size: 20px;
+}
+.map .inner p {
+    font-size: 12px;
+}
+.map .inner select {
+    font-size: 12px;
+}
+.map .inner input {
+    font-size: 14px;
+}
 .citynews h3 {
     font-size: 16px;
 }
@@ -58,7 +70,36 @@
 .century .seemore h2, .century .seemore a{
     font-size: 20px;
 }
-
+.volunteer .title h1 {
+    font-size: 20px;
+}
+.volunteer .title p {
+    font-size: 12px;
+}
+.volunteer .content .treaty-group h3 {
+    font-size: 14px;
+}
+.volunteer .content .treaty-group p, .volunteer .content .treaty-group a{
+    font-size: 12px;
+}
+.volunteer .content .application {
+    font-size: 12px;
+}
+.volunteer .content .application #application-btn {
+    font-size: 14px;
+}
+.footer .contact h1 {
+    font-size: 20px;
+}
+.footer .contact p {
+    font-size: 12px;
+}
+.footer .contact input {
+    font-size: 15px;
+}
+.footer .copyright {
+    font-size: 12px;
+}
 /* 占满全屏 */
 .top, .banner, .intro,
 .slogan, .map, .citynews,

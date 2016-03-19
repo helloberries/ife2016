@@ -46,6 +46,42 @@
     <h1>关于新世界，你不知道的还有什么？</h1>
 </section>
 <section class="map">
+    <div class="inner">
+        <h1>查找新世界城市活动信息</h1>
+        <div class="line"></div>
+        <p>每个城市的有不同的活动信息，请自助查询您所需要了解的城市</p>
+        <form action="#">
+            <label for="country">
+                <div class="select fl">
+                    <select name="country" id="country">
+                        <option value="china">中国</option>
+                    </select>
+                </div>
+            </label>
+            <label for="province">
+                <div class="select fl">
+                    <select name="province" id="province">
+                        <option value="beijing">北京市</option>
+                        <option value="tianjin">天津市</option>
+                        <option value="hebei">河北省</option>
+                        <option value="shannxi">陕西省</option>
+                        <option value="neimenggu">内蒙古自治区</option>
+                        <option value="liaoning">辽宁省</option>
+                    </select>
+                </div>
+            </label>
+            <label for="city">
+                <div class="select fl">
+                    <select name="city" id="city">
+                        <option value="default">城市</option>
+                    </select>
+                </div>
+            </label>
+            <label for="search" class="fl">
+                <input type="submit" id="search" value="搜     索">
+            </label>
+        </form>
+    </div>
 </section>
 <section class="citynews">
     <div class="inner">
@@ -113,18 +149,77 @@
         <div class="century-picbox fr"><img src="images/station.png" alt=""></div>
     </div>
 </section>
-<section class="volunteer"></section>
-<footer class="footer">
-    <div class="contact">
-        <div class="inner">
-            <h1>联系我们</h1>
-            <p>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯<br>也可以通过以下任何方式关注我们动态</p>
-            <div class="sns"></div>
+<section class="volunteer">
+    <div class="title">
+        <h1>成为我们的志愿者</h1>
+        <div class="line"></div>
+        <p>新世界的大家庭需要每一个爱生活的人的加入，如果你够年轻，有梦想，有激情<br>那就不要犹豫，快来加入我们，成为改变所有人生活的人</p>
+    </div>
+    <div class="content">
+        <div class="treaty-group fl">
+            <div class="treaty">
+                <h3>新世界志愿者协议</h3>
+                <p>加入新世界志愿者的人员必须遵守中华人民共和国的相关法律法规，并且本着平等资源的原则 ......</p>
+                <a href="#" class="fr">more</a>
+            </div>
+            <div class="treaty">
+                <h3>新世界志愿者权利</h3>
+                <p>新世界志愿者享受新世界内部所有资源共享的权利，并且享受所在四新世界活动的优先参与资格</p>
+                <a href="#" class="fr">more</a>
+            </div>
+            <div class="treaty">
+                <h3>更多条款</h3>
+                <a href="#" class="fr">more</a>
+            </div>
+        </div>
+        <div class="application fl">
+            <form action="">
+                <label for="name" class="fl">
+                    <input type="text" id="name" placeholder="姓名：">
+                </label>
+                <label for="age" class="fr">
+                    <input type="text" id="age" placeholder="年龄：">
+                </label>
+                <label for="contact" class="fl">
+                    <input type="text" id="contact" placeholder="联系方式:">
+                </label>
+                <label for="address" class="fr">
+                    <input type="text" id="address" placeholder="联系地址：">
+                </label>
+                <label for="dreamlife">
+                    <textarea name="dreamlife" id="dreamlife" placeholder="请简单描述您梦想的生活："></textarea>
+                </label>
+                <label for="application-btn">
+                    <input type="submit" id="application-btn" value="提交申请">
+                </label>
+            </form>
         </div>
     </div>
+</section>
+<footer class="footer">
+    <div class="contact">
+        <h1>联系我们</h1>
+        <p>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯<br>也可以通过以下任何方式关注我们动态</p>
+        <div class="emailform">
+        <form action="">
+            <label for="email">
+                <input type="email" id="email" placeholder="someone@email.com">
+            </label>
+            <label for="submit">
+                <input type="submit" id="submit" value="提 交">
+            </label>
+        </form>
+        </div>
+        <div class="sns">
+            <a href="#" class="qq"></a>
+            <a href="#" class="weibo"></a>
+            <a href="#" class="twi"></a>
+            <a href="#" class="net"></a>
+        </div>
+        </div>
     <div class="copyright">
         <a href="#">@2016新世界</a>
-        <a href="#">Back to top</a>
+        <a href="#" class="back-to-top fr">Back to top</a>
     </div>
 </footer>
 </body>
