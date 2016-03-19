@@ -121,6 +121,7 @@ body {
 /* banner */
 .banner {
     height: 690px;
+    margin-top: 55px;
     background: url("images/banner.png") 0 0 no-repeat;
     background-size: cover;
     color: #fff;
