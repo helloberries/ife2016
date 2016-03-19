@@ -26,6 +26,9 @@ li {
 article, aside, footer, header, main, nav, section, p {
     display: block;
 }
+select, input, textarea {
+    border: none;
+}
 .fl {
     float: left;
 }
@@ -189,6 +192,57 @@ article, aside, footer, header, main, nav, section, p {
     background: url("images/map.png") no-repeat;
     background-size: cover;
 }
+.map .inner {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+}
+.map .inner h1, .map .inner p {
+    color: #fff;
+}
+.map .inner .line {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-left: -15px;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+.map .inner p {
+    margin-top: 32px;
+}
+.map form {
+    margin-top: 55px;
+}
+.map .inner select, .map .inner input {
+    width: 236px;
+    height: 36px;
+    line-height: 36px;
+    cursor: pointer;
+}
+.map .inner .select {
+    margin-right: 30px;
+}
+.map .inner select {
+    /*appearance 去掉小三角*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: 1em;
+    color: #A8A9AA;
+    background: #fff url("images/icons/select.png") no-repeat 95% 50%;
+}
+.map .inner option {
+    color: #323232;
+    background-color: #E3E3E4;
+}
+.map .inner input {
+    color: #fff;
+    background-color: #E7504D;;
+}
 /* map ends */
 
 /* citynews */
@@ -227,9 +281,9 @@ article, aside, footer, header, main, nav, section, p {
     text-align: center;
 }
 .shanghai h3 {
-    /* ? 如何让文字紧靠两端 */
-    letter-spacing: 32px;
-    margin:0 auto;
+    /* 让文字紧靠两端 */
+    text-align: justify;
+    text-align-last: justify;
 }
 .shanghai .newspic {
     margin-top: 10px;
@@ -422,13 +476,142 @@ article, aside, footer, header, main, nav, section, p {
 /* volunteer */
 .volunteer {
     height: 750px;
-    background-color: #f2aeae;
+    padding: 115px 140px 166px;
+    background-color: #fff;
+}
+.volunteer .title {
+    position: relative;
+    text-align: center;
+}
+.volunteer .title h1 {
+    color: #323232;
+}
+
+.volunteer .title .line {
+    position: absolute;
+    top: 45%;
+    left: 49%;
+    width: 30px;
+    height: 3px;
+    background-color: #E7504D;
+}
+.volunteer .title p {
+    margin-top: 30px;
+    color: #AAAAA9;
+}
+.volunteer .content {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+.volunteer .content .treaty-group {
+    width: 40%;
+}
+.volunteer .content .treaty-group .treaty {
+    width: 100%;
+    margin-bottom: 40px;
+    padding-right: 70px;
+}
+.volunteer .content .treaty-group .treaty h3 {
+    margin-bottom: 20px;
+}
+.volunteer .content .treaty-group .treaty p {
+    color: #A7A5A6;
+    line-height: 21px;
+}
+.volunteer .content .treaty-group .treaty a {
+    width: 50px;
+    text-align: right;
+    background: url("images/icons/more.png") no-repeat left 70%;
+}
+.volunteer .content .treaty-group .treaty a:link, .volunteer .content .treaty-group .treaty a:visited {
+    color: #A7A5A6;
+} 
+.volunteer .content .application {
+    width: 60%;
+}
+.volunteer .content .application #name, #age, #contact, #address {
+    width: 300px;
+    height: 40px;
+    margin-bottom: 15px;
+    text-indent: 2em;
+    background-color: #EDEDEE;
+}
+.volunteer .content .application #age, #address {
+    margin-right: -10px;
+}
+.volunteer .content .application #dreamlife {
+    resize: none;
+    width: 620px;
+    height: 120px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #EDEDEE;
+}
+.volunteer .content .application #application-btn {
+    width: 620px;
+    height: 40px;
+    background-color: #EDEDEF;
 }
 /* volunteer ends */
 
 /* footer */
 .footer {
+    position: relative;
     height: 420px;
     background-color: #32363E;
+}
+.contact {
+    width: 40%;
+    height: 80%;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+.contact .emailform {
+    width: 510px;
+}
+.contact #email {
+    width: 80%;
+    height: 40px;
+}
+.contact #submit {
+    width: 80px;
+    height: 40px;
+    margin-left: -10px;
+}
+.contact .sns a {
+    width: 30px;
+    height: 30px;
+}
+.contact .sns .qq {
+    background: url("images/icons/qq.png") no-repeat;
+}
+.contact .sns .weibo {
+    background: url("images/icons/weibo.png") no-repeat;
+}
+.contact .sns .twi {
+    background: url("images/icons/twi.png") no-repeat;
+}
+.contact .sns .net {
+    background: url("images/icons/net.png") no-repeat;
+}
+.copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #303039;
+}
+.copyright a {
+    margin-top: 30px;
+    margin-left: 100px;
+}
+.copyright .back-to-top {
+    margin-left: 0;
+    margin-right: 40px;
+}
+.copyright a:link, .copyright a:visited {
+    color: #fff;
 }
 /* footer ends */
