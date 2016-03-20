@@ -211,13 +211,20 @@ body {
     color: #fff;
 }
 .map .inner .line {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    margin-left: -15px;
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
+	border-bottom-style: solid;
+	border-bottom-color: #fff;
+	width: 32px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	// 原写法：
+    // position: absolute;
+    // top: 70%;
+    // left: 50%;
+    // margin-left: -15px;
+    // width: 30px;
+    // height: 3px;
+    // background-color: #fff;
 }
 .map .inner p {
     margin-top: 32px;
@@ -496,12 +503,19 @@ body {
 }
 
 .volunteer .title .line {
-    position: absolute;
-    top: 45%;
-    left: 49%;
-    width: 30px;
-    height: 3px;
-    background-color: #E7504D;
+	border-bottom-style: solid;
+	border-bottom-color: #E7504D;
+	width: 30px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	// 原写法：
+    // position: absolute;
+    // top: 45%;
+    // left: 49%;
+    // width: 30px;
+    // height: 3px;
+    // background-color: #E7504D;
 }
 .volunteer .title p {
     margin-top: 30px;
