@@ -1,0 +1,17 @@
+/* FONT */
+* {
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+/* font-size*/
+.login span{
+    font-size: 12px;
+}
+.login i {
+    font-size: 20px;
+}
+.sidebar .profile .follow a{
+    font-size: 12px;
+}
+.sidebar .profile .follow span{
+    font-size: 16px;
+}
