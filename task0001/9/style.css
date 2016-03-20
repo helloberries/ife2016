@@ -1,0 +1,54 @@
+@import url(reset.css);
+@import url(base.css);
+
+/* ------ BASICS ------ */
+body {
+}
+
+/* ------ TOP ------*/
+.top {
+    width: 100%;
+    height: 56px;
+    background-color: #228ABF;
+}
+.logo {
+    width: 36px;
+    height: 36px;
+    margin-top: 10px;
+    margin-left: 50px;
+    background: url("images/icons/logo.png") no-repeat center center;
+}
+.search-bar {
+    margin-top: 14px;
+}
+.search-bar span {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: -40px;
+}
+.search-bar i {
+    position: relative; /*让search图标显示在搜索条上*/
+    color: #aaa;
+}
+.search-bar input {
+    width: 313px;
+    height: 28px;
+    padding-left: 40px;
+    border-radius: 20px;
+}
+.login {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+    margin-right: 92px;
+}
+.login:link, .login:visited {
+    color: #fff;
+}
+.login span {
+    margin-left: 10px;
+}
+.login i {
+    color: #fff;
+}
