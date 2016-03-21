@@ -27,7 +27,13 @@ article, aside, footer, header, main, nav, section, p {
     display: block;
 }
 select, input, textarea {
-    border: none;
+    outline: none;
+}
+input {
+    border: 0;
+}
+textarea {
+    resize: none;
 }
 .fl {
     float: left;
@@ -217,46 +223,119 @@ body {
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	// 原写法：
-    // position: absolute;
-    // top: 70%;
-    // left: 50%;
-    // margin-left: -15px;
-    // width: 30px;
-    // height: 3px;
-    // background-color: #fff;
 }
 .map .inner p {
     margin-top: 32px;
 }
+/*form*/
 .map form {
     margin-top: 55px;
 }
-.map .inner select, .map .inner input {
+.map form .list {
+    position: relative;
+    display: inline-block;
     width: 236px;
     height: 36px;
+    margin: 0 14px;
+    vertical-align: top;
+    text-align: left;
+}
+.map form .list .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.map form .list:not(:last-child) .content:hover {
+    outline: 1px solid #E7504D;
+}
+.map form .list .content .tog {
+    width: 236px;
+    height: 36px;
+    margin: 0 auto;
+    padding-left: 14px;
     line-height: 36px;
-    cursor: pointer;
+    text-align: left;
+    background: #fff;
+    color: #aaa;
 }
-.map .inner .select {
-    margin-right: 30px;
+.map form .list .content .sel {
+    display: none;
+    margin: 0 auto;
+    padding: 0;
+    background: #e3e3e4;
 }
-.map .inner select {
-    /*appearance 去掉小三角*/
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    text-indent: 1em;
-    color: #A8A9AA;
-    background: #fff url("images/icons/select.png") no-repeat 95% 50%;
+.map form .list .content:hover .sel {
+    display: block;
 }
-.map .inner option {
-    color: #323232;
-    background-color: #E3E3E4;
+.map form .list .content .sel .opt {
+    position: relative;
+    width: 236px;
+    height: 26px;
 }
-.map .inner input {
+.opt .rad, .opt .lab {
+    position: absolute;
+    width: 100%;
+    height: 26px;
+}
+.opt .rad {
+    z-index: -1;
+    opacity: 0;
+}
+.opt .lab {
+    padding-left: 32px;
+    color: #333;
+    line-height: 26px;
+}
+.opt .lab.select, .opt:hover .lab {
+    background-color: #E7504D;
     color: #fff;
-    background-color: #E7504D;;
+}
+.opt .lab.select:before{
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 9px;
+    width: 12px;
+    height: 8px;
+    background: url("images/icons/hook.png") no-repeat;
+}
+.search-btn {
+    width: 236px;
+    height: 36px;
+    background-color: #be4e48;
+    color: #fff;
+    text-align: center;
+    word-spacing: 1.4em;
+    outline: 0;
+}
+/* 箭头 */
+.arrow-box {
+    position: relative;
+}
+.arrow {
+    position: absolute;
+    top: 20px;
+    right: -175px;
+}
+.arrow:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: #E7504D transparent transparent;
+    border-width: 8px;
+    bottom: -2px;
+}
+.arrow:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: #fff transparent transparent;
+    border-width: 8px;
+    bottom: -1px;
+    z-index: 9;
+}
+.list, .tog, .sel, .opt{
+    cursor: pointer;
 }
 /* map ends */
 
@@ -484,7 +563,6 @@ body {
     border-color: transparent transparent transparent #fff;
     border-width: 15px 0 15px 26px;
     border-style: solid;
-
 }
 /* newtime ends*/
 
@@ -509,13 +587,6 @@ body {
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	// 原写法：
-    // position: absolute;
-    // top: 45%;
-    // left: 49%;
-    // width: 30px;
-    // height: 3px;
-    // background-color: #E7504D;
 }
 .volunteer .title p {
     margin-top: 30px;
@@ -563,7 +634,6 @@ body {
     margin-right: -10px;
 }
 .volunteer .content .application #dreamlife {
-    resize: none;
     width: 620px;
     height: 120px;
     margin-bottom: 20px;

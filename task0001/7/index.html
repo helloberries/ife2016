@@ -50,36 +50,74 @@
         <h1>查找新世界城市活动信息</h1>
         <div class="line"></div>
         <p>每个城市的有不同的活动信息，请自助查询您所需要了解的城市</p>
-        <form action="#">
-            <label for="country">
-                <div class="select fl">
-                    <select name="country" id="country">
-                        <option value="china">中国</option>
-                    </select>
+        <form action="#" method="get">
+            <div class="list">
+                <div class="content">
+                    <div class="tog">
+                        <span id="country">国家</span>
+                        <span class="arrow-box"><span class="arrow"></span></span>
+                    </div>
+                    <ul class="sel">
+                        <li class="opt">
+                            <input type="radio" class="rad" id="cn" name="country" value="china">
+                            <label class="lab" for="cn">中国</label>
+                        </li>
+                        <li class="opt">
+                            <input type="radio" class="rad" id="en" name="country" value="england">
+                            <label class="lab" for="en">英国</label>
+                        </li>
+                    </ul>
                 </div>
-            </label>
-            <label for="province">
-                <div class="select fl">
-                    <select name="province" id="province">
-                        <option value="beijing">北京市</option>
-                        <option value="tianjin">天津市</option>
-                        <option value="hebei">河北省</option>
-                        <option value="shannxi">陕西省</option>
-                        <option value="neimenggu">内蒙古自治区</option>
-                        <option value="liaoning">辽宁省</option>
-                    </select>
+            </div>
+            <div class="list">
+                <div class="content">
+                    <div class="tog">
+                        <span id="province">省份</span>
+                        <span class="arrow-box"><span class="arrow"></span></span>
+                    </div>
+                    <ul class="sel">
+                        <li class="opt">
+                            <input type="radio" class="rad" id="bj" name="province" value="beijing">
+                            <label for="bj" class="lab select">北京市</label>
+                        </li>
+                        <li class="opt">
+                            <input type="radio" class="rad" id="tj" name="province" value="tianjin">
+                            <label for="tj" class="lab">天津市</label>
+                        </li>
+                        <li class="opt">
+                            <input type="radio" class="rad" id="sx" name="province" value="shanxi">
+                            <label for="sx" class="lab">陕西省</label>
+                        </li>
+                        <li class="opt">
+                            <input type="radio" class="rad" id="ln" name="province" value="liaoning">
+                            <label for="ln" class="lab">辽宁省</label>
+                        </li>
+                    </ul>
                 </div>
-            </label>
-            <label for="city">
-                <div class="select fl">
-                    <select name="city" id="city">
-                        <option value="default">城市</option>
-                    </select>
+            </div>
+            <div class="list">
+                <div class="content">
+                    <div class="tog">
+                        <span id="city">城市</span>
+                        <span class="arrow-box"><span class="arrow"></span></span>
+                    </div>
+                    <ul class="sel">
+                        <li class="opt">
+                            <input type="radio" class="rad" id="sy" name="city" value="shenyang">
+                            <label for="sy" class="lab">沈阳市</label>
+                        </li>
+                        <li class="opt">
+                            <input type="radio" class="rad" id="dl" name="city" value="dalian">
+                            <label for="dl" class="lab">大连市</label>
+                        </li>
+                    </ul>
                 </div>
-            </label>
-            <label for="search" class="fl">
-                <input type="submit" id="search" value="搜     索">
-            </label>
+            </div>
+            <div class="list">
+                <div class="content">
+                    <input class="search-btn" type="submit" value="搜 索">
+                </div>
+            </div>
         </form>
     </div>
 </section>
