@@ -34,11 +34,8 @@
 .map .inner p {
     font-size: 12px;
 }
-.map .inner select {
+.map .inner form {
     font-size: 12px;
-}
-.map .inner input {
-    font-size: 14px;
 }
 .citynews h3 {
     font-size: 16px;
