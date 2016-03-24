@@ -10,6 +10,7 @@
 
 [任务七：实现常见的技术产品官网的页面架构及样式布局](http://ife.baidu.com/task/detail?taskId=7)
 [demo](https://helloberries.github.io/ife2016/task0001/7/index.html)
+[个人总结](http://pixelatedberries.leanote.com/post/275c6f39edaa)
 
 [任务十：Flexbox 布局练习](http://ife.baidu.com/task/detail?taskId=10)
 [demo](https://helloberries.github.io/ife2016/task0001/10/index.html)
