@@ -19,9 +19,17 @@ window.onload = function () {
 		letout('right');
 	}, false);
 
-	// 给ul绑定事件，点击其子元素则清除该子元素
+	// 绑定单击清除事件
+	var ul = document.getElementsByTagName('ul')[0];
+	ul.addEventListener('click', function(e){
+		ul.removeChild(e.target);
+	}, false);
 	
 };
+
+function check (input) {
+	if (input.match(regexp))
+}
 
 /**
  * letin: 插入
@@ -69,11 +77,3 @@ function letout (direction) {
 	}
 }
 
-/**
- * clearBlock: 清除点击的block
- * @param  {[variable]} block [点击的block]
- */
-function clearBlock (block) {
-	var ul = document.getElementsByTagName('ul')[0];
-	ul.removeChild(block);
-}
