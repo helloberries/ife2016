@@ -1,0 +1,52 @@
+/* RESET */
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul, li {
+    list-style: none;
+}
+input, button {
+    outline: none;
+}
+button {
+    cursor: pointer;
+}
+
+/* STYLE */
+#btns, #numbers {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+input {
+    height: 20px;
+    border: 1px solid #eee;
+}
+button {
+    width: 50px;
+    height: 20px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background: #fff;
+}
+#leftout {
+    margin-left: 30px;
+}
+#numbers {
+    margin-right: 10px;
+    width: 500px;
+    height: 500px;
+}
+.num {
+    float: left;
+    width: auto;
+    height: 50px;
+    margin-right: 10px;
+    padding: 0 10px;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
+    background: green;
+    cursor: pointer;
+}
