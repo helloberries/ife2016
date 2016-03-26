@@ -27,9 +27,6 @@ window.onload = function () {
 	
 };
 
-function check (input) {
-	if (input.match(regexp))
-}
 
 /**
  * letin: 插入
@@ -45,7 +42,11 @@ function letin (direction) {
 
 	// 获取输入值，创建新block
 	var input = document.getElementById('input').value;
-	var inputNum = document.createTextNode(input);
+	if (/^\d+$/.test(input)){
+		var inputNum = document.createTextNode(input);
+	} else {
+		alert("请输入数字");
+	}
 	var newBlock = document.createElement('li');
 	newBlock.appendChild(inputNum);
 	// 给新block添加样式
@@ -76,4 +77,3 @@ function letout (direction) {
 		alert(currentLastBlock.textContent);
 	}
 }
-
