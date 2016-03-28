@@ -1,11 +1,12 @@
 function check (e, input) {
-	var input = document.getElementById('input').value;
+	var inputBox = document.getElementById('input');
+	var input = inputBox.value;
 	var message = document.getElementById('message');
 	console.log(typeof(input));
 	if (input.length <= 4) {
 		message.textContent = '姓名不能为空';
 		message.style.color = 'red';
-		// input.style.borderColor = 'red'; 
+		inputBox.style.borderColor = 'red';
 	}
 	e.preventDefault();
 	e.stopPropagation();
