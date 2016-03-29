@@ -33,4 +33,4 @@ var submitBtn = document.getElementById('submitBtn');
 submitBtn.addEventListener('click', check, false);
 
 var inputBox = document.getElementById('input');
-inputBox.addEventListener('focus', focusMsg, false);
+inputBox.addEventListener('input', focusMsg, false);
