@@ -1,0 +1,60 @@
+/* BASIC */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei", Arial, sans-serif; }
+
+input, button {
+  outline: none;
+  border: none; }
+
+/* STYLE */
+form {
+  margin-top: 30px;
+  margin-left: 30px; }
+
+label {
+  display: block;
+  margin-bottom: 20px; }
+  label span {
+    display: inline-block;
+    width: 70px;
+    text-align: right; }
+  label .input, label .btn {
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px; }
+  label .input {
+    margin-left: 20px;
+    width: 300px;
+    text-indent: .5em;
+    border: 1px solid #a9a9a9; }
+    label .input.focus-input {
+      border: 1px solid #62aeec;
+      box-shadow: 0 0 5px #62aeec; }
+    label .input.error-input {
+      border: 1px solid #de000f;
+      box-shadow: 0 0 5px #de000f; }
+    label .input.correct-input {
+      border: 1px solid #61ba46;
+      box-shadow: 0 0 5px #61ba46; }
+  label .tips {
+    display: none;
+    margin-left: 95px;
+    padding-top: 5px;
+    color: #a9a9a9;
+    font-size: .7em; }
+    label .tips.error-tips {
+      color: #de000f; }
+    label .tips.correct-tips {
+      color: #61ba46; }
+  label .btn {
+    margin-left: 315px;
+    width: 80px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #2F79BA;
+    cursor: pointer; }
+
+/*# sourceMappingURL=style.css.map */

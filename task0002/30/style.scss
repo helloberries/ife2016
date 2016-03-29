@@ -1,0 +1,82 @@
+/* BASIC */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Microsoft Yahei", Arial, sans-serif;
+}
+input, button {
+	outline: none;
+	border: none;
+}
+
+/* STYLE */
+$height: 40px;
+$font-size: 16px;
+$span-width: 70px;
+$input-width: 300px;
+$btn-width: 80px;
+$input-margin-left: 20px;
+$error-color: #de000f;
+$correct-color: #61ba46;
+
+form {
+	margin-top: 30px;
+	margin-left: 30px;
+}
+label {
+	display: block;
+	margin-bottom: 20px;
+
+	span {
+		display: inline-block;
+		width: $span-width;
+		text-align: right;
+	}
+	.input, .btn {
+		height: $height;
+		line-height: $height;
+		border-radius: 5px;
+	}
+	.input {
+		margin-left: $input-margin-left;
+		width: $input-width;
+		text-indent: .5em;
+		border: 1px solid #a9a9a9;
+
+		&.focus-input {
+			border: 1px solid #62aeec;
+			box-shadow: 0 0 5px #62aeec;
+		}
+		&.error-input {
+			border: 1px solid $error-color;
+			box-shadow: 0 0 5px $error-color;
+		}
+		&.correct-input {
+			border: 1px solid $correct-color;
+			box-shadow: 0 0 5px $correct-color;
+		}
+	}
+	.tips {
+		display: none;
+		margin-left: $span-width + $input-margin-left + 5px;
+		padding-top: 5px;
+		color: #a9a9a9;
+		font-size: .7em;
+
+		&.error-tips {
+			color: $error-color;
+		}
+		&.correct-tips {
+			color: $correct-color;
+		}
+	}
+	.btn {
+		margin-left: $span-width + $input-margin-left + ($input-width - $btn-width) + 5px;
+		width: $btn-width;
+		font-size: $font-size;
+		color: #fff;
+		background-color: #2F79BA;
+		cursor: pointer;
+	}
+}
