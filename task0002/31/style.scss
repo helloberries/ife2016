@@ -1,0 +1,61 @@
+/** BASIC */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Microsoft Yahei", Arial, sans-serif;
+}
+input {
+	border: none;
+	outline: none;
+}
+
+/** STYLE */
+$radioLab-margin-left: 100px;
+$input-height: 30px;
+$lab-margin-top: 20px;
+$cityInput-width: 150px;
+$cityInput-margin-right: 50px;
+$uniInput-width: 300px;
+
+.radioLab {
+	display: inline-block;
+	margin-left: $radioLab-margin-left;
+	margin-top: $lab-margin-top;
+
+	&:nth-child(2) {
+		margin-left: ($cityInput-width + $cityInput-margin-right) * .7;
+	}
+}
+.selectLab {
+	display: block;
+	margin-top: $lab-margin-top;
+	margin-left: $radioLab-margin-left * .6;
+
+	& select {
+		height: $input-height;
+		border-radius: 5px;
+		text-indent: .5em;
+	}
+	& .citySelect {
+		margin-right: $cityInput-margin-right;
+		width: $cityInput-width;
+	}
+	& .uniSelect {
+		display: inline-block;
+		width: $uniInput-width;
+	}
+}
+.textLab {
+	display: none;
+	margin-top: $lab-margin-top;
+	margin-left: $radioLab-margin-left * .6;
+
+	& input {
+		width: $cityInput-width + $uniInput-width;
+		height: $input-height;
+		border: 1px solid #a9a9a9;
+		border-radius: 5px;
+		text-indent: .5em;
+	}
+}
