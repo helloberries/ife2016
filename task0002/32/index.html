@@ -6,7 +6,24 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<form method="post">
+	<label class="radioLab"><input id="student" type="radio" name="status" value="student" checked="checked">在校生</label>
+	<label class="radioLab"><input id="graduate" type="radio" name="status" value="graduate">非在校生</label>
+	<label class="selectLab" id="uniLab">学校
+		<select class="citySelect" id="citySelect">
+		</select>
+		<select class="uniSelect" id="uniSelect">
+		</select>
+	</label>
+	<label class="textLab" id="emplLab">就业单位
+		<input class="employment" type="text">
+	</label>
+	<label>
+		<button type="submit" class="btn" id="validationBtn">提交</button>
+	</label>
+</form>
 <script src="util.js"></script>
+<script src="event.js"></script>
 <script src="task32.js"></script>
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
