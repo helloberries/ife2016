@@ -13,7 +13,7 @@ var util = {
     	var inputLength = input.value.length,
     		repwInput = document.getElementById('repw'),
     		repwTips = repwInput.nextElementSibling;
-    	if (inputLength <6 || inputLength > 12) {
+    	if (inputLength < 6 || inputLength > 12) {
     		this.errorInput(input, tips, '密码格式错误');
     	}else if (inputLength >= 6 && inputLength <= 12) {
     		this.correctInput(input, tips, '密码格式正确');
@@ -21,11 +21,10 @@ var util = {
     	this.repwCheck(repwInput, repwTips);
     },
     repwCheck: function (input, tips) {
-    	var inputLength = input.value.length,
-    		pwValue = document.getElementById('pw').value;
+    	var	pwValue = document.getElementById('pw').value;
     	if (input.value !== pwValue) {
     		this.errorInput(input, tips, '密码输入不一致');
-    	} else if (input.value === pwValue) {
+    	} else if (input.value === pwValue && input.value !== '') {
     		this.correctInput(input, tips, '密码输入一致');
     	}
     },
