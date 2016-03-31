@@ -1,3 +1,110 @@
+/*------------------------------------*\
+    #BASICS
+\*------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei", Arial, sans-serif; }
 
+input, button {
+  border: none;
+  outline: none; }
+
+/*------------------------------------*\
+    #STYLES
+\*------------------------------------*/
+/** VARIABLES */
+/** EXTEND */
+.border-styles, .inputLab .input, .textLab input {
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+  text-indent: .5em; }
+
+.rulesStyles, .inputLab .rules {
+  color: #a9a9a9;
+  font-size: .7em; }
+  .rulesStyles.error-rules, .inputLab .error-rules.rules {
+    color: #de000f; }
+  .rulesStyles.correct-rules, .inputLab .correct-rules.rules {
+    color: #61ba46; }
+
+.btnStyles, .btn {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #2F79BA;
+  cursor: pointer; }
+
+/** TEMP */
+.focus-input {
+  border: 1px solid #62aeec;
+  box-shadow: 0 0 5px #62aeec; }
+
+.error-input {
+  border: 1px solid #de000f;
+  box-shadow: 0 0 5px #de000f; }
+
+.correct-input {
+  border: 1px solid #61ba46;
+  box-shadow: 0 0 5px #61ba46; }
+
+/** STYLE */
+form {
+  margin-top: 30px; }
+
+.inputLab {
+  display: block;
+  margin-left: 60px;
+  margin-bottom: 20px; }
+  .inputLab span {
+    display: inline-block;
+    width: 70px;
+    text-align: right; }
+  .inputLab .input {
+    width: 500px;
+    height: 30px;
+    margin-left: 20px; }
+  .inputLab .rules {
+    display: none;
+    margin-left: 95px;
+    padding-top: 5px; }
+
+.radioLab {
+  display: inline-block;
+  margin-left: 100px;
+  margin-top: 20px; }
+  .radioLab:nth-child(2) {
+    margin-left: 140px; }
+
+.selectLab {
+  display: block;
+  margin-top: 20px;
+  margin-left: 100px; }
+  .selectLab select {
+    height: 30px;
+    border-radius: 5px;
+    text-indent: .5em; }
+  .selectLab .citySelect {
+    margin-right: 50px;
+    width: 150px; }
+  .selectLab .uniSelect {
+    display: inline-block;
+    width: 300px; }
+
+.textLab {
+  display: none;
+  margin-top: 20px;
+  margin-left: 100px; }
+  .textLab input {
+    width: 450px;
+    height: 30px; }
+
+.btn {
+  margin-top: 20px;
+  margin-left: 600px; }
 
 /*# sourceMappingURL=style.css.map */
