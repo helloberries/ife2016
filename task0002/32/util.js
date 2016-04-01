@@ -220,12 +220,54 @@ var selectContent = [
 // makeLinkageSelect: 生成联动表单DOM的函数
 // firstid: 一级表单id
 // secondid: 二级表单id
-function makeLinkageSelect (firstid, secondid) {
+function makeLinkageSelect (labelName, firstid, secondid, firstClsName, secondClsName) {
     var form = document.getElementsByTagName('form')[0],
-        label = document.createElement('label');
+        label = document.createElement('label'),
+        firstSelect = document.createElement('select'),
+        secondSelect = document.createElement('select'),
+        firstSelectOptions = [],
+        secondSelectOptions = [];
 
+    label.className = 'selectLab';
+    label.textContent = labelName;
+    firstSelect.id = firstid;
+    firstSelect.className = firstClsName;
+    secondSelect.id = secondid;
+
+    // 创建一级菜单的option们
+    do {
+        var firstSelectOpt = document.createElement('option');
+        firstSelectOptions.push(firstSelectOpt);
+        firstSelect.appendChild(firstSelectOpt);
+    } while (firstSelect.childNodes.length < selectContent.length)
+    // 给一级菜单里的option添加内容
     for (var i=0; i<selectContent.length; i++) {
-        var firstSelect = document.createElement('select');
+        //var firstSelectOptText = document.createTextNode(selectContent[i].text);
+        //firstSelectOptions[i].appendChild(firstSelectOptText);
+        firstSelectOpt.textContent = selectContent[i].text;
+        firstSelectOpt.value = selectContent[i].text;
+        firstSelect.appendChild(firstSelectOpt);
     }
 
+    //console.log(firstSelectOptions);
+
+    //secondSelect.textContent = '';
+    //for (var j=0; i<selectContent.length; i++) {
+    //    if (firstSelect.childNodes[i+1].selected) {
+    //        for (var j=0; j<selectContent[i].val.length; j++) {
+    //            var secondSelectOpt = document.createElement('option');
+    //            secondSelectOptions.push(secondSelectOpt);
+    //            secondSelect.appendChild(secondSelectOpt);
+    //        }
+    //    }
+    //}
+       //while (secondSelect.childNodes.length < selectContent[i].val.length)
+    //console.log(secondSelectOptions);
+
+    label.appendChild(firstSelect);
+    label.appendChild(secondSelect);
+
+    form.appendChild(label);
 }
+
+makeLinkageSelect('学校', 'citySelect', 'uniSelect', 'citySelect', 'uniSelect');

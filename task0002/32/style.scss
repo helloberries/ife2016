@@ -132,6 +132,7 @@ form {
 		text-indent: .5em;
 	}
 	& .citySelect {
+        margin-left: $input-margin-left;
 		margin-right: $cityInput-margin-right;
 		width: $cityInput-width;
 	}
