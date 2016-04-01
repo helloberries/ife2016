@@ -89,6 +89,7 @@ form {
     border-radius: 5px;
     text-indent: .5em; }
   .selectLab .citySelect {
+    margin-left: 20px;
     margin-right: 50px;
     width: 150px; }
   .selectLab .uniSelect {
