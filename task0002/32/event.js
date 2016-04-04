@@ -8,6 +8,14 @@ var eventOperation = {
 	},
 	focusCheck: function (input) {
 		var rules = input.nextElementSibling;
+		// 遍历formSettings数组，如果获得焦点的input的id等于被遍历到的对象的'text'的值，
+		// 则用该对象的'attr'里rules的值，创建文本节点
+		for (var i=0; i<formSettings.length; i++) {
+			if (input.id === formSettings[i].text) {
+				var rulesText = document.createTextNode(formSettings[i].attr.rules);
+				rules.appendChild(rulesText);
+			}
+		}
 		rules.style.display = 'block';
 		input.className = 'input focus-input';
 	},
@@ -20,28 +28,19 @@ var eventOperation = {
 	},
 	blurCheck: function (input) {
 		var rules = input.nextElementSibling;
+		// if (true /* 检验输入的函数 return true*/) {
+		// 	target.className = 'input correct-input';
+		// } else {
+		// 	target.className = 'input error-input';
+		// }
 		for (var i=0; i<formSettings.length; i++) {
-			if (input.id === formSettings[i].text) {
-                switch (formSettings[i].attr.validator(input)) {
-                    case 'success':
-                        input.className = 'input correct-input';
-                        rules.textContent = formSettings[i].attr.success;
-                        rules.className = 'rules correct-rules';
-                        break;
-                    case 'incompatible':
-                        input.className = 'input error-input';
-                        rules.textContent = formSettings[i].attr.incompatible;
-                        rules.className = 'rules error-rules';
-                        break;
-                    case 'fail':
-                        input.className = 'input error-input';
-                        rules.textContent = formSettings[i].attr.fail;
-                        rules.className = 'rules error-rules';
-                        break;
-                    default:
-                        break;
-                }
-            }
+			switch (formSettings[i].text) {
+				case 'name':
+					formSettings[i].attr.validator;
+					break;
+				default:
+					break;
+			}
 		}
 	}
 };

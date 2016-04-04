@@ -16,7 +16,7 @@ input, button {
 \*------------------------------------*/
 /** VARIABLES */
 /** EXTEND */
-.border-styles, .inputLab .input, .textLab input {
+.border-styles, .inputLab .input {
   border: 1px solid #a9a9a9;
   border-radius: 5px;
   text-indent: .5em; }
@@ -63,15 +63,17 @@ form {
   .inputLab span {
     display: inline-block;
     width: 70px;
-    text-align: right; }
+    text-align: right;
+    margin-right: 20px; }
   .inputLab .input {
     width: 500px;
-    height: 30px;
-    margin-left: 20px; }
+    height: 30px; }
   .inputLab .rules {
     display: none;
     margin-left: 95px;
     padding-top: 5px; }
+  .inputLab:last-child {
+    display: none; }
 
 .radioLab {
   display: inline-block;
@@ -83,26 +85,22 @@ form {
 .selectLab {
   display: block;
   margin-top: 20px;
-  margin-left: 100px; }
+  margin-left: 60px; }
+  .selectLab span {
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+    margin-right: 20px; }
   .selectLab select {
     height: 30px;
     border-radius: 5px;
     text-indent: .5em; }
   .selectLab .citySelect {
-    margin-left: 20px;
     margin-right: 50px;
     width: 150px; }
   .selectLab .uniSelect {
     display: inline-block;
     width: 300px; }
-
-.textLab {
-  display: none;
-  margin-top: 20px;
-  margin-left: 100px; }
-  .textLab input {
-    width: 450px;
-    height: 30px; }
 
 .btn {
   margin-top: 20px;
