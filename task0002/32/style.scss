@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*------------------------------------*\
     #BASICS
 \*------------------------------------*/
@@ -94,12 +95,12 @@ form {
 		display: inline-block;
 		width: $span-width;
 	 	text-align: right;
+		margin-right: $input-margin-left;
 	}
 	// 输入框： 表单名称后的文本框
 	& .input {
 		width: $cityInput-width + $cityInput-margin-right + $uniInput-width;		
 		height: $height;
-		margin-left: $input-margin-left;
 		@extend .border-styles;
 	}
 	// 表单获得焦点时出现的规则提示
@@ -108,6 +109,10 @@ form {
 		margin-left: $span-width + $input-margin-left + 5px;
 		padding-top: 5px;
 		@extend .rulesStyles;
+	}
+	
+	&:last-child {
+		display: none;
 	}
 }
 
@@ -124,7 +129,14 @@ form {
 .selectLab {
 	display: block;
 	margin-top: $lab-margin-top;
-	margin-left: $radioLab-margin-left;
+    margin-left: $radioLab-margin-left * .6;
+
+    & span {
+      display: inline-block;
+      width: $span-width;
+      text-align: right;
+      margin-right: $input-margin-left;
+    }
 
 	& select {
 		height: $height;
@@ -132,24 +144,12 @@ form {
 		text-indent: .5em;
 	}
 	& .citySelect {
-        margin-left: $input-margin-left;
 		margin-right: $cityInput-margin-right;
 		width: $cityInput-width;
 	}
 	& .uniSelect {
 		display: inline-block;
 		width: $uniInput-width;
-	}
-}
-.textLab {
-	display: none;
-	margin-top: $lab-margin-top;
-	margin-left: $radioLab-margin-left;
-
-	& input {
-		width: $cityInput-width + $uniInput-width;
-		height: $height;
-		@extend .border-styles;
 	}
 }
 
