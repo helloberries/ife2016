@@ -11,6 +11,9 @@ input, button {
   border: none;
   outline: none; }
 
+ul, li {
+  list-style: none; }
+
 /*------------------------------------*\
     #STYLES
 \*------------------------------------*/
@@ -104,6 +107,18 @@ form {
 
 .btn {
   margin-top: 20px;
-  margin-left: 600px; }
+  margin-left: 250px; }
+
+.valid {
+  width: 200px;
+  height: 150px;
+  margin-top: 20px;
+  margin-left: 100px;
+  color: #666;
+  border: 2px solid #666; }
+  .valid li {
+    margin-left: 20px;
+    height: 28.8px;
+    line-height: 28.8px; }
 
 /*# sourceMappingURL=style.css.map */

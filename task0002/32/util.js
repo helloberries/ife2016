@@ -8,12 +8,22 @@ function $(id) {
 /** addEvent: 绑定事件，兼容不同浏览器 */
 function addEvent (elem, type, func) {
     if (elem.addEventListener) {
-        elem.addEventListener(type, func);
+        elem.addEventListener(type, func, false);
     } else if (elem.attachEvent) {
         elem.attachEvent('on'+type, func);
     } else {
         elem['on'+type] = func;
     }
+}
+/** onetime: 绑定一次性事件 */
+function onetime(node,type,callback) {
+    // 创建事件
+    node.addEventListenter(type,function(e) {
+        // 移除事件
+        e.target.removeEventListenter(e.type,arguments.callee);
+        // 回调函数
+        return callback(e);
+    })
 }
 
 /*------------------------------------*\
@@ -40,6 +50,7 @@ function makeLabel (labClsName) {
 /** makeInput: 生成input */
 function makeInput (inputId) {
     var label = makeLabel('inputLab');
+    var rules = makeRules(inputId);
     var newspan = document.createElement('span'),
         newinput = document.createElement('input'),
         newspanText = document.createTextNode(formList[inputId].label);
@@ -52,7 +63,17 @@ function makeInput (inputId) {
     newspan.appendChild(newspanText);
     label.appendChild(newspan);
     label.appendChild(newinput);
+    label.appendChild(rules);
     form.appendChild(label);
+}
+/** makeRules: 生成提示规则 */
+function makeRules (id) {
+    var rules = document.createElement('p'),
+        rulesText = document.createTextNode(formList[id].rules);
+
+    rules.className = 'rules';
+    rules.appendChild(rulesText);
+    return rules;
 }
 /** makeRadio: 生成radio */
 function makeRadio (radioId) {
@@ -73,6 +94,19 @@ function makeRadio (radioId) {
     label.appendChild(newlabelText);
     form.appendChild(label);
 }
+/** makeBtn: 生成button */
+function makeBtn (btnId) {
+    var label = makeLabel('btnLab');
+    var newbtn = document.createElement('button');
+
+    newbtn.id = btnId;
+    newbtn.className = 'btn';
+
+    newbtn.type = formList[btnId].type;
+    newbtn.textContent = formList[btnId].value;
+
+    label.appendChild(newbtn);
+}
 
 /* 执行函数 */
 var form = makeForm('post');
@@ -81,5 +115,6 @@ makeInput('pw');
 makeInput('repw');
 makeInput('email');
 makeInput('tel');
-makeRadio('ungrad', 'checked');
-makeRadio('grad');
+makeRadio('skin1', 'checked');
+makeRadio('skin2');
+makeBtn('submitBtn');

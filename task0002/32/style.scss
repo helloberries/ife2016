@@ -12,7 +12,9 @@ input, button{
 	border: none;
 	outline: none;
 }
-
+ul, li {
+	list-style: none;
+}
 
 /*------------------------------------*\
     #STYLES
@@ -155,6 +157,21 @@ form {
 
 .btn {
 	margin-top: $lab-margin-top;
-	margin-left: $radioLab-margin-left + $cityInput-width + $cityInput-margin-right + $uniInput-width;
+	margin-left: $radioLab-margin-left * 2.5;
 	@extend .btnStyles;
+}
+
+.valid {
+	width: $input-width / 1.5;
+	height: $input-width / 2;
+	margin-top: $lab-margin-top;
+	margin-left: $radioLab-margin-left;
+	color: #666;
+	border: 2px solid #666;
+
+	& li {
+		margin-left: $input-margin-left;
+		height: $font-size * 1.8;
+		line-height: $font-size * 1.8;
+	}
 }
