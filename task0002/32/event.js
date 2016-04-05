@@ -65,7 +65,7 @@ var eventOperation = {
                     validText.textContent += '√;';
                     break;
                 case 'fail':
-                    validText.textContent += '×';
+                    validText.textContent += '×'
                     break;
                 case 'empty':
                     validText.textContent += '请填入信息';
