@@ -143,5 +143,3 @@ formList.skin2 = {
     name: 'skin',
     value: 'skin2'
 };
-
-console.log(formList);
