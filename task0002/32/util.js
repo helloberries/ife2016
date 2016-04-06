@@ -25,6 +25,27 @@ function onetime(node,type,callback) {
         return callback(e);
     })
 }
+/** once: 令函数只执行一次*/
+function once(fn, context) {
+    var result;
+    return function() {
+        if(fn) {
+            result = fn.apply(context || this, arguments);
+            fn = null;
+        }
+        return result;
+    };
+}
+/** isParent: 判断某一元素是不是另一元素的子元素*/
+function isParent(obj, parentObj) {
+    while (obj != undefined && obj != null && obj.tagName.toUpperCase() != 'BODY') {
+        if (obj === parentObj) {
+            return true;
+        }
+        obj = obj.parentNode;
+    }
+    return false;
+}
 
 /*------------------------------------*\
  #生成DOM的函数
@@ -107,6 +128,27 @@ function makeBtn (btnId) {
 
     label.appendChild(newbtn);
 }
+/** makeResult: 生成显示验证结果的div */
+function makeResult() {
+    var validDiv = document.createElement('div'),
+        validul = document.createElement('ul');
+
+    validDiv.className = 'valid';
+    validDiv.id = 'valid';
+
+    var inputs = document.querySelectorAll('.input');
+    for (var i=0; i<inputs.length; i++) {
+        var inputId = inputs[i].id;
+        var validli = document.createElement('li'),
+            validText = document.createTextNode(inputs[i].parentNode.firstChild.textContent + '：');
+
+        validli.appendChild(validText);
+        validul.appendChild(validli);
+    }
+
+    validDiv.appendChild(validul);
+    form.appendChild(validDiv);
+}
 
 /* 执行函数 */
 var form = makeForm('post');
@@ -118,3 +160,4 @@ makeInput('tel');
 makeRadio('skin1', 'checked');
 makeRadio('skin2');
 makeBtn('submitBtn');
+makeResult();

@@ -18,9 +18,12 @@ ul, li {
     #STYLES
 \*------------------------------------*/
 /** VARIABLES */
+/** MIXINS */
 /** EXTEND */
 .border-styles, .inputLab .input {
   border: 1px solid #a9a9a9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   border-radius: 5px;
   text-indent: .5em; }
 
@@ -38,6 +41,8 @@ ul, li {
   line-height: 30px;
   font-size: 16px;
   color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   border-radius: 5px;
   background-color: #2F79BA;
   cursor: pointer; }
@@ -115,7 +120,10 @@ form {
   margin-top: 20px;
   margin-left: 100px;
   color: #666;
-  border: 2px solid #666; }
+  border: 2px solid #666;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
   .valid li {
     margin-left: 20px;
     height: 28.8px;

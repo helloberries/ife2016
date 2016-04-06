@@ -1,0 +1,152 @@
+@charset "utf-8";
+/*------------------------------------*\
+    #BASICS
+\*------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei", Arial, sans-serif;
+}
+input, button{
+  border: none;
+  outline: none;
+}
+
+
+/*------------------------------------*\
+    #STYLES
+\*------------------------------------*/
+/** VARIABLES */
+$height: 30px;
+$font-size: 16px;
+$span-width: 70px;
+$input-width: 300px;
+$btn-width: 80px;
+$span-margin-right: 20px;
+$error-color: #de000f;
+$correct-color: #61ba46;
+
+$radioLab-margin-left: 100px;
+$lab-margin-top: 20px;
+$cityInput-width: 150px;
+$cityInput-margin-right: 50px;
+$uniInput-width: 300px;
+
+/** EXTEND */
+// 边框样式
+.border-styles {
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+  text-indent: .5em;
+}
+// 提示规则样式
+.rulesStyles {
+  color: #a9a9a9;
+  font-size: .7em;
+
+  &.error-rules {
+    color: $error-color;
+  }
+  &.correct-rules {
+    color: $correct-color;
+  }
+}
+// 按钮样式
+.btnStyles {
+  width: $btn-width;
+  height: $height;
+  line-height: $height;
+  font-size: $font-size;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #2F79BA;
+  cursor: pointer;
+}
+
+/** TEMP */
+// 获得焦点时边框颜色阴影变化
+.focus-input {
+  border: 1px solid #62aeec;
+  box-shadow: 0 0 5px #62aeec;
+}
+.error-input {
+  border: 1px solid $error-color;
+  box-shadow: 0 0 5px $error-color;
+}
+.correct-input {
+  border: 1px solid $correct-color;
+  box-shadow: 0 0 5px $correct-color;
+}
+
+/** STYLE */
+// 表单整体
+form {
+  margin-top: 30px;
+}
+// 多项表单部分
+.inputLab {
+  display: block;
+  margin-left: $radioLab-margin-left * .6;
+  margin-bottom: $lab-margin-top;
+
+  // 表单名称： 姓名，密码，密码确认，邮箱，手机...
+  & span {
+    display: inline-block;
+    width: $span-width;
+    text-align: right;
+    margin-right: $span-margin-right;
+  }
+  // 输入框： 表单名称后的文本框
+  & .input {
+    width: $cityInput-width + $cityInput-margin-right + $uniInput-width;
+    height: $height;
+    @extend .border-styles;
+  }
+  // 表单获得焦点时出现的规则提示
+  & .rules {
+    display: none;
+    margin-left: $span-width + $input-margin-left + 5px;
+    padding-top: 5px;
+    @extend .rulesStyles;
+  }
+
+  &:last-child {
+    display: none;
+  }
+}
+
+// 联动表单部分
+.radioLab {
+  display: inline-block;
+  margin-left: $radioLab-margin-left;
+  margin-top: $lab-margin-top;
+
+  &:nth-child(2) {
+    margin-left: ($cityInput-width + $cityInput-margin-right) * .7;
+  }
+}
+.selectLab {
+  display: block;
+  margin-top: $lab-margin-top;
+
+  & select {
+    height: $height;
+    border-radius: 5px;
+    text-indent: .5em;
+  }
+  & .citySelect {
+    margin-right: $cityInput-margin-right;
+    width: $cityInput-width;
+  }
+  & .uniSelect {
+    display: inline-block;
+    width: $uniInput-width;
+  }
+}
+
+.btn {
+  margin-top: $lab-margin-top;
+  margin-left: $radioLab-margin-left + $cityInput-width + $cityInput-margin-right + $uniInput-width;
+  @extend .btnStyles;
+}

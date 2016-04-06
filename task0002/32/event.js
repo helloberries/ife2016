@@ -45,44 +45,37 @@ var eventOperation = {
 		}
 	},
 	// 点击提交按钮弹出验证结果
-	validCheck: function(e){
+	validCheck: function (e) {
 		e = e || window.event;
 		var target = e.target || e.srcElement;
 
-        var validResult = document.createElement('div'),
-            validul = document.createElement('ul');
+		var validDiv = $('valid');
+		for (var i=0; i<inputs.length; i++) {
+			var validli = validDiv.childNodes[0].childNodes[i];
+			var inputId = inputs[i].id;
+			var result = eventOperation.blurCheck(inputs[i]);
+			switch (result) {
+				case 'success':
+					validli.textContent += '√';
+					break;
+				case 'fail':
+					validli.textContent += '×';
+					break;
+				case 'empty':
+					validli.textContent += '请填入信息';
+					break;
+				default:
+					break;
+			}
+		}
 
-        validResult.className = 'valid';
-
-        for (var i=0; i<inputs.length; i++){
-            var validli = document.createElement('li'),
-                validText = document.createTextNode(inputs[i].parentNode.firstChild.textContent + '：');
-
-            var inputId = inputs[i].id;
-            var result = eventOperation.blurCheck(inputs[i]);
-            switch (result) {
-                case 'success':
-                    validText.textContent += '√;';
-                    break;
-                case 'fail':
-                    validText.textContent += '×'
-                    break;
-                case 'empty':
-                    validText.textContent += '请填入信息';
-                    break;
-                default:
-                    break;
-            }
-
-            validli.appendChild(validText);
-            validul.appendChild(validli);
-        }
-
-        validResult.appendChild(validul);
-        form.appendChild(validResult);
+		//validResult.style.display = 'block';
 
 		e.stopPropagation();
 		e.preventDefault();
+
+	},
+	showValid: function () {
 
 	}
 };
