@@ -27,15 +27,19 @@ ul, li {
   border-radius: 5px;
   text-indent: .5em; }
 
-.rulesStyles, .inputLab .rules {
+.border-styles-skin2, .inputLab .input-skin2 {
+  border: 1px solid #a9a9a9;
+  text-indent: .5em; }
+
+.rules-styles, .inputLab .rules {
   color: #a9a9a9;
   font-size: .7em; }
-  .rulesStyles.error-rules, .inputLab .error-rules.rules {
+  .rules-styles.error-rules, .inputLab .error-rules.rules {
     color: #de000f; }
-  .rulesStyles.correct-rules, .inputLab .correct-rules.rules {
+  .rules-styles.correct-rules, .inputLab .correct-rules.rules {
     color: #61ba46; }
 
-.btnStyles, .btn {
+.btn-styles, .btn {
   width: 80px;
   height: 30px;
   line-height: 30px;
@@ -47,17 +51,35 @@ ul, li {
   background-color: #2F79BA;
   cursor: pointer; }
 
+.btn-styles-skin2, .btn-skin2 {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 8px;
+  color: #fff;
+  -moz-box-shadow: 3px 3px 10px #999;
+  -webkit-box-shadow: 3px 3px 10px #999;
+  box-shadow: 3px 3px 10px #999;
+  background-color: green;
+  cursor: pointer; }
+
 /** TEMP */
 .focus-input {
   border: 1px solid #62aeec;
+  -moz-box-shadow: 0 0 5px #62aeec;
+  -webkit-box-shadow: 0 0 5px #62aeec;
   box-shadow: 0 0 5px #62aeec; }
 
 .error-input {
   border: 1px solid #de000f;
+  -moz-box-shadow: 0 0 5px #de000f;
+  -webkit-box-shadow: 0 0 5px #de000f;
   box-shadow: 0 0 5px #de000f; }
 
 .correct-input {
   border: 1px solid #61ba46;
+  -moz-box-shadow: 0 0 5px #61ba46;
+  -webkit-box-shadow: 0 0 5px #61ba46;
   box-shadow: 0 0 5px #61ba46; }
 
 /** STYLE */
@@ -65,6 +87,7 @@ form {
   margin-top: 30px; }
 
 .inputLab {
+  position: relative;
   display: block;
   margin-left: 60px;
   margin-bottom: 20px; }
@@ -76,12 +99,13 @@ form {
   .inputLab .input {
     width: 500px;
     height: 30px; }
+  .inputLab .input-skin2 {
+    width: 200px;
+    height: 30px; }
   .inputLab .rules {
     display: none;
     margin-left: 95px;
     padding-top: 5px; }
-  .inputLab:last-child {
-    display: none; }
 
 .radioLab {
   display: inline-block;
@@ -90,29 +114,13 @@ form {
   .radioLab:nth-child(2) {
     margin-left: 140px; }
 
-.selectLab {
-  display: block;
-  margin-top: 20px;
-  margin-left: 60px; }
-  .selectLab span {
-    display: inline-block;
-    width: 70px;
-    text-align: right;
-    margin-right: 20px; }
-  .selectLab select {
-    height: 30px;
-    border-radius: 5px;
-    text-indent: .5em; }
-  .selectLab .citySelect {
-    margin-right: 50px;
-    width: 150px; }
-  .selectLab .uniSelect {
-    display: inline-block;
-    width: 300px; }
-
 .btn {
   margin-top: 20px;
   margin-left: 250px; }
+
+.btn-skin2 {
+  margin-top: 20px;
+  margin-left: 100px; }
 
 .valid {
   width: 200px;

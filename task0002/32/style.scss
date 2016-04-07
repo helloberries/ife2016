@@ -26,6 +26,7 @@ $span-width: 70px;
 $input-width: 300px;
 $btn-width: 80px;
 $input-margin-left: 20px;
+$focus-color: #62aeec;
 $error-color: #de000f;
 $correct-color: #61ba46;
 
@@ -36,10 +37,15 @@ $cityInput-margin-right: 50px;
 $uniInput-width: 300px;
 
 /** MIXINS */
-@mixin radius($border-radius) {
+@mixin radius ($border-radius) {
 	-webkit-border-radius: $border-radius;
 	-moz-border-radius: $border-radius;
 	border-radius: $border-radius;
+}
+@mixin box-shadow ($box-shadow...) {
+	-moz-box-shadow: $box-shadow;
+	-webkit-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
 }
 
 /** EXTEND */
@@ -49,8 +55,12 @@ $uniInput-width: 300px;
 	@include radius(5px);
 	text-indent: .5em;
 }
+.border-styles-skin2 {
+	border: 1px solid #a9a9a9;
+	text-indent: .5em;
+}
 // 提示规则样式
-.rulesStyles {
+.rules-styles {
 	color: #a9a9a9;
 	font-size: .7em;
 
@@ -62,7 +72,7 @@ $uniInput-width: 300px;
 	}
 }
 // 按钮样式
-.btnStyles {
+.btn-styles {
 	width: $btn-width;
 	height: $height;
 	line-height: $height;
@@ -72,20 +82,30 @@ $uniInput-width: 300px;
 	background-color: #2F79BA;
 	cursor: pointer;
 }
+.btn-styles-skin2 {
+	width: $btn-width;
+	height: $height;
+	line-height: $height;
+	font-size: $font-size * .5;
+	color: #fff;
+	@include box-shadow(3px 3px 10px #999);
+	background-color: green;
+	cursor: pointer;
+}
 
 /** TEMP */
 // 获得焦点时边框颜色阴影变化
 .focus-input {
 	border: 1px solid #62aeec;
-	box-shadow: 0 0 5px #62aeec;
+	@include box-shadow(0 0 5px $focus-color);
 }
 .error-input {
 	border: 1px solid $error-color;
-	box-shadow: 0 0 5px $error-color;
+	@include box-shadow(0 0 5px $error-color);
 }
 .correct-input {
 	border: 1px solid $correct-color;
-	box-shadow: 0 0 5px $correct-color;
+	@include box-shadow(0 0 5px $correct-color);
 }
 
 /** STYLE */
@@ -95,6 +115,7 @@ form {
 }
 // 多项表单部分
 .inputLab {
+	position: relative;
 	display: block;
 	margin-left: $radioLab-margin-left * .6;
 	margin-bottom: $lab-margin-top;
@@ -112,20 +133,21 @@ form {
 		height: $height;
 		@extend .border-styles;
 	}
+	& .input-skin2 {
+		width: $cityInput-width + $cityInput-margin-right;
+		height: $height;
+		@extend .border-styles-skin2;
+	}
 	// 表单获得焦点时出现的规则提示
 	& .rules {
 		display: none;
 		margin-left: $span-width + $input-margin-left + 5px;
 		padding-top: 5px;
-		@extend .rulesStyles;
-	}
-	
-	&:last-child {
-		display: none;
+		@extend .rules-styles;
 	}
 }
 
-// 联动表单部分
+// radio部分
 .radioLab {
 	display: inline-block;
 	margin-left: $radioLab-margin-left;
@@ -135,39 +157,20 @@ form {
 		margin-left: ($cityInput-width + $cityInput-margin-right) * .7;
 	}
 }
-.selectLab {
-	display: block;
-	margin-top: $lab-margin-top;
-    margin-left: $radioLab-margin-left * .6;
 
-    & span {
-      display: inline-block;
-      width: $span-width;
-      text-align: right;
-      margin-right: $input-margin-left;
-    }
-
-	& select {
-		height: $height;
-		border-radius: 5px;
-		text-indent: .5em;
-	}
-	& .citySelect {
-		margin-right: $cityInput-margin-right;
-		width: $cityInput-width;
-	}
-	& .uniSelect {
-		display: inline-block;
-		width: $uniInput-width;
-	}
-}
-
+// 按钮部分
 .btn {
 	margin-top: $lab-margin-top;
 	margin-left: $radioLab-margin-left * 2.5;
-	@extend .btnStyles;
+	@extend .btn-styles;
+}
+.btn-skin2 {
+	margin-top: $lab-margin-top;
+	margin-left: $radioLab-margin-left;
+	@extend .btn-styles-skin2;
 }
 
+// 验证信息部分
 .valid {
 	//display: none;
 	width: $input-width / 1.5;
