@@ -2,33 +2,21 @@
  ** 说明
  *  formList.js
  *  input的格式：
- *      {
-             id: '',
-             label: '',
-             type: '',
-             rules: '',
-             success: '',
-             fail: '',
-             empty: '',
-             validator: function(){}
-        }
+ *  formlist.id = {
+         label: '',
+         type: '',
+         rules: '',
+         success: '',
+         fail: '',
+         empty: '',
+         validator: function(){}
+    }
  *  radio的格式：
- *       {
-             id: '',
-             label: '',
-             name: '',
-             value: ''
-        }
- * select的格式：
- *     {
- *          id: '',
- *          secondaryId: '', //二级菜单的id
- *          opt:[
- *              {firstOpt: '',
- *                  secondOpt: [
- *                  ]}
- *          ]
- *     }
+ *  formlist.id = {
+         label: '',
+         name: '',
+         value: ''
+    }
 \*------------------------------------*/
 
 var formList = [];
@@ -127,12 +115,12 @@ formList.tel = {
             return 'empty';
         }
     }
-}
+};
 formList.submitBtn = {
     type: 'submit',
     value: '提交',
     validator: function(){}
-}
+};
 formList.skin1 = {
     label: '样式一',
     name: 'skin',
