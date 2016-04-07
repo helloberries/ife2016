@@ -51,18 +51,19 @@ var eventOperation = {
 
 		var validDiv = $('valid');
 		for (var i=0; i<inputs.length; i++) {
-			var validli = validDiv.childNodes[0].childNodes[i];
+			var validSpan = validDiv.childNodes[0].childNodes[i].childNodes[1];
+			validSpan.textContent = '';
 			var inputId = inputs[i].id;
 			var result = eventOperation.blurCheck(inputs[i]);
 			switch (result) {
 				case 'success':
-					validli.textContent += '√';
+					validSpan.textContent += '√';
 					break;
 				case 'fail':
-					validli.textContent += '×';
+					validSpan.textContent += '×';
 					break;
 				case 'empty':
-					validli.textContent += '请填入信息';
+					validSpan.textContent += '请填入信息';
 					break;
 				default:
 					break;
@@ -73,7 +74,7 @@ var eventOperation = {
 		e.preventDefault();
 
 	},
-	// 切换整体样式
+	// 切换皮肤
 	changeSkin: function (e) {
 		e = e || window.event;
 		var target = e.target || e.srcElement;
@@ -87,7 +88,6 @@ var eventOperation = {
 			} else if (target.id === 'skin1') {
 				inputs[i].className = 'input';
 				submitBtn.className = 'btn';
-				var oFontSize = parseInt(getStyle(inputs[i].parentNode, 'fontSize'));
 				inputs[i].parentNode.style.fontSize = '16px';
 			}
 		}

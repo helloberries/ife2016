@@ -15,37 +15,6 @@ function addEvent (elem, type, func) {
         elem['on'+type] = func;
     }
 }
-/** onetime: 绑定一次性事件 */
-function onetime(node,type,callback) {
-    // 创建事件
-    node.addEventListenter(type,function(e) {
-        // 移除事件
-        e.target.removeEventListenter(e.type,arguments.callee);
-        // 回调函数
-        return callback(e);
-    })
-}
-/** once: 令函数只执行一次*/
-function once(fn, context) {
-    var result;
-    return function() {
-        if(fn) {
-            result = fn.apply(context || this, arguments);
-            fn = null;
-        }
-        return result;
-    };
-}
-/** isParent: 判断某一元素是不是另一元素的子元素*/
-function isParent(obj, parentObj) {
-    while (obj != undefined && obj != null && obj.tagName.toUpperCase() != 'BODY') {
-        if (obj === parentObj) {
-            return true;
-        }
-        obj = obj.parentNode;
-    }
-    return false;
-}
 /** getStyle: 获得任意元素的样式*/
 function getStyle (obj, attr) {
     if (obj.currentStyle) {
@@ -148,9 +117,11 @@ function makeResult() {
     for (var i=0; i<inputs.length; i++) {
         var inputId = inputs[i].id;
         var validli = document.createElement('li'),
-            validText = document.createTextNode(inputs[i].parentNode.firstChild.textContent + '：');
+            validText = document.createTextNode(inputs[i].parentNode.firstChild.textContent + '：'),
+            validSpan = document.createElement('span');
 
         validli.appendChild(validText);
+        validli.appendChild(validSpan);
         validul.appendChild(validli);
     }
 
