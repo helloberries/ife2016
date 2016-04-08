@@ -29,14 +29,24 @@ formList.username = {
     empty: '姓名不能为空',
     validator: function(input){
         var inputValue = input.value,
-            inputLength = inputValue.length;
-        if (inputLength >= 4 && inputLength <= 16) {
-            return 'success';
-        } else if ((inputLength < 4 || inputLength > 16) && inputValue) {
-            return 'fail';
-        } else if (!inputValue) {
-            return 'empty';
-        }
+            inputLength = inputValue.length,
+            count = 0;
+
+            for(var i=0; i<inputLength; i++){
+                if(/[a-z0-9]/i.test(inputValue[i])) {
+                    count ++;
+                } else {
+                    count += 2;
+                }
+            }
+
+            if (count >= 4 && count <= 16 && !/[^0-9a-z\u4e00-\u9fa5]/i.test(inputValue)) {
+                return 'success';
+            } else if (count <= 4 || count >=16 || /[^0-9a-z\u4e00-\u9fa5]/i.test(inputValue)) {
+                return 'fail';
+            } else if (!inputValue) {
+                return 'empty';
+            }
     }
 };
 formList.pw = {
@@ -49,9 +59,9 @@ formList.pw = {
     validator: function(input){
         var inputValue = input.value,
             inputLength = inputValue.length;
-        if (inputLength >= 6 && inputLength <= 12) {
+        if (inputLength >= 6 && inputLength <= 12 && !/[^0-9a-z]/gi.test(inputValue)) {
             return 'success';
-        } else if ((inputLength < 6 || inputLength > 12) && inputValue) {
+        } else if ((inputLength < 6 || inputLength > 12) && /[^0-9a-z]/gi.test(inputValue)) {
             return 'fail';
         } else if (!inputValue) {
             return 'empty';
@@ -67,7 +77,6 @@ formList.repw = {
     empty: '不要忘记确认密码哦',
     validator: function(input){
         var inputValue = input.value,
-            inputLength = inputValue.length,
             pwValue = document.querySelectorAll('input[type="password"]')[0].value;
         if (inputValue === pwValue && inputValue !== '') {
             return 'success';
@@ -86,7 +95,7 @@ formList.email = {
     fail: '邮箱地址格式错误',
     empty: '邮箱地址不能为空',
     validator: function(input){
-        var reg = /^[a-z]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i,
+        var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/i,
             inputValue = input.value;
         if (reg.test(inputValue)) {
             return 'success'
