@@ -1,0 +1,56 @@
+/* BASIC */
+* {
+  font-size: 1em;
+  font-family: 'Microsoft Yahei', sans-serif;
+  /*margin: 0;
+  padding: 0;*/
+}
+textarea {
+  resize: none;
+}
+input, button, textarea {
+  display: inline-block;
+  border: none;
+  outline: none;
+}
+
+
+/* STYLE */
+.add {
+  height: 8em;
+  margin-bottom: 1em;
+}
+.textarea {
+  float: left;
+  width: 15em;
+  height: 8em;
+  background-color: #EDEDEC;
+}
+button {
+  width: 4em;
+  height: 2em;
+  margin-left: .6em;
+  cursor: pointer;
+}
+.search {
+  height: 2em;
+  margin-bottom: 1em;
+}
+.searchBox {
+  display: block;
+  float: left;
+  width: 8em;
+  height: 2em;
+  margin-left: .2em;
+  text-indent: .5em;
+  background-color: #EDEDEC;
+}
+.tag {
+  display: inline-block;
+  margin-top: .2em;
+  margin-right: .2em;
+  padding: .3em .6em;
+  color: #fff;
+  background-color: #E7504D;
+  cursor: pointer;
+}
