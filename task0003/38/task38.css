@@ -1,0 +1,26 @@
+#table {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse:collapse;
+  border: 1px solid #ededec;
+}
+#table tr {
+  height: 2em;
+}
+#table td {
+  width: 20%;
+  text-align: center;
+  border: 1px solid #ededec;
+}
+#title {
+  text-transform: capitalize;
+}
+#title th {
+  color: #fefefe;
+  background-color: #222;
+  border-right: 1px solid #ededec;
+  cursor: pointer;
+}
+#title th:last-child {
+  border-right: none;
+}
