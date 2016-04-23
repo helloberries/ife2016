@@ -66,8 +66,23 @@ var events = {
   deleteTag: function (e) {
     e = e || window.event;
 		var target = e.target || e.srcElement;
-
     target.parentNode.removeChild(target);
+  },
+  hoverTag: function (e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement;
+
+    var tip = document.createElement('span');
+    tip.className = 'tip';
+    tip.textContent = '点击清除';
+    target.appendChild(tip);
+  },
+  leaveTag: function (e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement;
+
+    var tip = util.$$(target, '.tip')[0];
+    target.removeChild(tip);
   }
 };
 
@@ -83,25 +98,17 @@ addBoxArr.forEach(function(item){
     item.style.border = 'none';
   });
 });
-// 提示+点击清除tag
-// util.addEvent(hobbybox, 'mouseover', events.hoverTag);
+//提示清除tag
+util.addEvent(hobbybox, 'mouseover', events.hoverTag);
+util.addEvent(hobbybox, 'mouseout', events.leaveTag);
+// 删除tag
 util.addEvent(hobbybox, 'click', events.deleteTag);
 // 添加tag
 addBoxArr.forEach(function(item){
-  util.addEvent(item, 'keyup', function(){
+  util.addEvent(item, 'keyup', function(e){
     events.addTag();
   });
 });
-// util.addEvent(addBtn, 'click', function () {
-//   var seperator = ' ' || ',';
-//   var tags = textarea.value.split(seperator);
-//   for (var i=0,len=tags.length; i<len; i++) {
-//     var tagSpan = document.createElement('span');
-//     tagSpan.textContent = tags[i];
-//     tagSpan.className = 'tag';
-//     hobbybox.appendChild(tagSpan);
-//   }
-// });
 // 查询tag
 util.addEvent(searchBtn, 'click', function () {
   var searchValue = searchBox.value,
