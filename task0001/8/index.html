@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>任务8</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /*清除浮动*/
+      .row:before,
+      .row:after {
+          content:"";
+          display:table;
+          clear:both;
+      }
+       [class *= col-]{
+        height: 50px;
+        border: 1px solid #999;
+        background-color: #eee;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">col</div>
+        <div class="col-sm-6">col</div>
+      </div>
+    </div>
+  </body>
+</html>
