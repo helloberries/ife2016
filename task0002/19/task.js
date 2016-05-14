@@ -1,205 +1,262 @@
-/*
- * note: getRandomBlocks里默认值设定还没搞定 ㄟ( ▔, ▔ )ㄏ 
- */
-window.onload = function () {
+(function(){
+	var btns = document.querySelectorAll("button"),
+			lin = btns[0],
+			rin = btns[1],
+			lout = btns[2],
+			rout = btns[3],
+			messBtn = btns[4],
+			bubbleBtn = btns[5],
+			selectionBtn = btns[6],
+			insertionBtn = btns[7],
+			queue = document.querySelector('ul');
 
-	// 获取4个按钮
-	var leftinBtn = document.getElementById('leftin'),
-		rightinBtn = document.getElementById('rightin'),
-		leftoutBtn = document.getElementById('leftout'),
-		rightoutBtn = document.getElementById('rightout'),
-		randomBtn = document.getElementById('random'),
-		sortBtn = document.getElementById('sort'),
-		testBtn = document.getElementById('test');
+			addHandler(lin, 'click',leftIn);
+			addHandler(rin, 'click',rightIn);
+			addHandler(lout, 'click',leftOut);
+			addHandler(rout, 'click',rightOut);
+			addHandler(queue, 'click',deleteEle);
+			addHandler(messBtn, 'click',function(){
+				init(queue, lin);
+			});
+			addHandler(bubbleBtn, 'click',function(){
+				bubbleSort(queue);
+			});
+			addHandler(selectionBtn, 'click', function(){
+				selectionSort(queue);
+			});
+			addHandler(insertionBtn, 'click', function(){
+				insertionSort(queue);
+			});
 
-	// 给4个按钮绑定事件
-	leftinBtn.addEventListener('click', function(){
-		letin('left');
-	}, false);
-	rightinBtn.addEventListener('click', function(){
-		letin('right');
-	}, false);
-	leftoutBtn.addEventListener('click', function(){
-		letout('left');
-	}, false);
-	rightoutBtn.addEventListener('click', function(){
-		letout('right');
-	}, false);
-
-	// 绑定单击清除事件
-	var ul = document.getElementsByTagName('ul')[0];
-	ul.addEventListener('click', function(e){
-		ul.removeChild(e.target);
-	}, false);
-
-	// 生成随机数事件
-	onetime(randomBtn, 'click', getRandomBlocks);
-
-	// 排序事件
-	onetime(sortBtn, 'click', getSortedBlocks);
-
-	// 重复次数
-	testBtn.addEventListener('click', arrCheck,false);
-};
-
-var queue = [];
+			init(queue, lin);
+})();
 
 /**
- * onetime: 创建一次性事件
- * @param  {[object]}   node     [事件对象]
- * @param  {[string]}   type     [事件种类]
- * @param  {Function} callback [函数]
- * @return {Function}            [函数]
+ * 初始化队列
  */
-function onetime (node, type, callback) {
-	// 创建事件
-	node.addEventListener(type, function (e) {
-		// 移除事件
-		e.target.removeEventListener(e.type, arguments.callee);
-		// 回调函数
-		return callback(e);
-	})
+function init(queue, lin) {
+	var randHeight, i , input = document.querySelector('input');
+	queue.innerHTML = "";
+	for (i=0; i<10; i++) {
+		input.value = Math.floor(Math.random() * 90) + 10;
+		lin.click();
+	}
 }
 
-
+/**
+ * 队列元素个数
+ */
+function queueLength(queue) {
+	return queue.querySelectorAll('li').length;
+}
 
 /**
- * letin: 插入
- * @param  {[string]} direction ['left', 'right']
+ * 验证用户输入值
  */
-function letin (direction) {
-	// ul: 列表
-	// currentFirstBlock: 当前第一个block
-	// currentLastBlock: 当前最后一个block
-	var ul = document.getElementsByTagName('ul')[0];
-	var currentFirstBlock = ul.firstChild;
+function transValue(input) {
+	var result = parseInt(input.value.replace(/\D/g, ""), 10);
 
-	// 获取输入值，创建新block
-	var input = document.getElementById('input').value;
-	if (/^\d+$/.test(input) && (input >= 10 && input <= 100)){
-		queue.push(input);
-		var inputNum = document.createTextNode(input);
-		if (queue.length > 60) {
-			alert('最多放置60个元素！');
-		}
+	if (result>100 || result<10) {
+		input.value = '必须为10-100的整数!';
+		return false;
+	}
+	return result;
+}
+
+/**
+ * 左侧入
+ */
+function leftIn() {
+	var queue = document.querySelector('ul'),
+			input = document.querySelector('input'),
+			newEle = document.createElement('li'),
+			oldEle = queue.querySelectorAll('li')[0],
+			temp;
+
+	if (!(temp = transValue(input))) {
+		return false;
+	}
+	newEle.style.height = temp + 'px';
+	if (queueLength(queue) >= 60) {
+		alert('队列满了！');
+	} else if (!oldEle) {
+		queue.appendChild(newEle);
 	} else {
-		alert("请输入10-100的数字");
-	}
-	var newBlock = document.createElement('li');
-	newBlock.appendChild(inputNum);
-	// 给新block添加样式
-	newBlock.className = "num";
-	// block高度由输入的数字决定
-	newBlock.style.height = input + 'px';
-	// 隐藏输入的数字
-	newBlock.textContent = '';
-
-	// 在左边或者右边插入
-	if (direction === 'left') {
-		ul.insertBefore(newBlock, currentFirstBlock);
-	} else if (direction === 'right') {
-		ul.appendChild(newBlock);
-	}	
-}
-
-/**
- * letout: 删除
- * @param  {[string]} direction ['left', 'right']
- */
-function letout (direction) {
-	var ul = document.getElementsByTagName('ul')[0];
-	var currentFirstBlock = ul.firstChild,
-		currentLastBlock = ul.lastChild;
-
-	if (direction === 'left') {
-		ul.removeChild(currentFirstBlock);
-		alert(currentFirstBlock.textContent);
-	} else if (direction === 'right') {
-		ul.removeChild(currentLastBlock);
-		alert(currentLastBlock.textContent);
+		queue.insertBefore(newEle, oldEle);
 	}
 }
 
 /**
- * getRandomInt: 生成限定范围内的随机数
- * @param  {[number]} min [最小值]
- * @param  {[number]} max [最大值]
- * @param {[number]} length [个数]
- * @return {[array]}     [随机数数组]
+ * 右侧入
  */
-function getRandomInt (min, max, length) {
-	for (var i=0; i<length; i++) {
-		queue.push(Math.floor(Math.random() * (max - min) + min)); 
+function rightIn() {
+	var newEle = document.createElement('li'),
+			queue = document.querySelector('ul'),
+			input = document.querySelector('input'),
+			temp;
+
+	if (!(temp = transValue(input))) {
+		return false;
 	}
-	return queue;
+	newEle.style.height = temp + 'px';
+	if (queueLength(queue) >= 60) {
+		alert('队列满了');
+	} else {
+		queue.appendChild(newEle);
+	}
 }
+
 /**
- * getRandomBlocks: 根据queue随机生成block
- * @param  {[string]} parent         [父元素标签名]
+ * 左侧出
  */
-function getRandomBlocks (parent) {
-	// 预设默认值（因为removeEventListener无法清除匿名函数）
-	parent = 'ul';
-	// 生成随机数组成的queue
-	getRandomInt(10, 100, 60);
-	// 获取父元素，遍历queue，添加子元素
-	oParent = document.getElementsByTagName(parent)[0];
-	for (var i=0; i<queue.length; i++) {
-		oChild = document.createElement('li');
-		oParent.appendChild(oChild);
-		oChild.className = "num";
-		oChild.style.height = queue[i] + 'px';
+function leftOut() {
+	var queue = document.querySelector('ul'),
+			oldEle = queue.querySelectorAll('li')[0];
+
+	if(!oldEle) {
+		alert('队列空了！');
+	} else {
+		alert(oldEle.offsetHeight);
+		queue.removeChild(oldEle);
 	}
-	console.log(queue);
 }
 
-function getSortedBlocks (arr) {
-	arr = queue;
-	arr.sort(sortArr);
-	
-	var blocks = document.querySelectorAll('.num');
-	for (var i=0; i<blocks.length; i++) {
-		var oBlockH = blocks[i].offsetHeight;
-		blocks[i].className = 'num-sorted';
-		blocks[i].style.left = 17 * (arr.indexOf(oBlockH)) + 'px';
-		console.log(arr.indexOf(oBlockH));
-	}
+/**
+ * 右侧出
+ */
+function rightOut() {
+	var queue = document.querySelector('ul'),
+			oldEle = queue.lastChild;
 
+	if (!oldEle) {
+		alert('队列空了！');
+	} else {
+		alert(oldEle.offsetHeight);
+	}
 }
 
-function arrCheck (arr) {
-	arr = queue;
-	var newArr = [],
-		temp = '';
-	for (var i=0; i<arr.length; i++) {
-		var count = 0;
-		temp = arr[i];
-		for (var j=0; j<arr.length; j++) {
-			if (arr[j] === temp) {
-				count ++;
-				arr[j] = -1;
+/**
+ * 删除元素
+ */
+function deleteEle(event) {
+	var oldEle = getTarget(event),
+			queue = document.querySelector('ul');
+
+	if (oldEle.tagName === 'li') {
+		queue.removeChild(oldEle);
+	}
+}
+
+/**
+ * 交换
+ */
+function swap(ele1, ele2) {
+	var temp = ele1.offsetHeight;
+
+	ele1.offsetHeight = ele2.offsetHeight;
+	ele1.style.height = ele2.offsetHeight +'px';
+	ele2.offsetHeight = temp;
+	ele2.style.height = temp + 'px';
+}
+
+/**
+ * 冒泡
+ */
+function bubbleSort(queue) {
+	var eles = queue.querySelectorAll('li'),
+			len = eles.length,
+			i,
+			j = 0,
+			delay = 50,
+			timer;
+
+	i = len - 1;
+	timer = setInterval(function(){
+		if (i<1) {
+			clearInterval(timer);
+		}
+		if (j === i) {
+			--i;
+			j = 0;
+		}
+		if (eles[j].offsetHeight > eles[j+1].offsetHeight) {
+			swap(eles[j], eles[j+1]);
+		}
+		++j;
+	}, delay);
+}
+
+/**
+ * 选择
+ */
+function selectionSort(queue) {
+	var eles = document.querySelectorAll('li'),
+			len = eles.length,
+			i = 0,
+			j = 1,
+			min = 0,
+			delay = 50,
+			timer;
+
+	timer = setInterval(function(){
+		if (i === len - 1) {
+			clearInterval(timer);
+		}
+		if (j === len) {
+			swap(eles[i], eles[min]);
+			++i;
+			min = i;
+			j = i + 1;
+		}
+		if (eles[j] && eles[j].offsetHeight < eles[min].offsetHeight) {
+			min = j;
+		}
+		++j;
+	}, delay);
+}
+
+/**
+ * 用两个变量控制内外循环
+ */
+function insertionSort(queue) {
+	var eles = queue.querySelectorAll('li'),
+			len = eles.length,
+			temp,
+			i = 1,
+			j = 0,
+			timer,
+			delay = 100,
+			outer = true,
+			inner = false;
+
+	timer = setInterval(function(){
+		if (outer) {
+			if (i === len) {
+				clearInterval(timer);
+				return;
+			}
+			if (eles[i].offsetHeight < eles[i-1].offsetHeight) {
+				temp = eles[i].offsetHeight;
+				j = i - 1;
+				outer = false;
+				inner = true;
+			} else {
+				i++;
 			}
 		}
-		if (temp !== -1) {
-			newArr.push(temp+':'+count);
-		}
-		if (count > 1) {
 
+		if (inner) {
+			if (j < 0 || eles[j].offsetHeight < temp) {
+				eles[j+1].style.height = temp + 'px';
+				eles[j+1].offsetHeight = temp;
+				i++;
+				inner = false;
+				outer = true;
+			} else {
+				eles[j+1].style.height = eles[j].style.height;
+				eles[j+1].offsetHeight = eles[j].offsetHeight;
+				j--;
+			}
 		}
-	}
-	// return newArr;
-	console.log(newArr);
-}
-
-/**
- * sortArr: 数组升序排序
- */
-function sortArr (pre, next) {
-	if (pre < next) {
-		return -1; // 小于
-	} else if (pre > next) {
-		return 1; // 大于
-	} else {
-		return 0; //等于
-	}
+	}, delay);
 }
