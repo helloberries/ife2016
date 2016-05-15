@@ -49,6 +49,13 @@ h2 {
   font-size: 1em;
   color: #fefefe;
 }
+h4 {
+	float: right;
+}
+h4 a:link, h4 a:visited {
+	font-family: 'Open Sans', serif;
+	color: #fff;
+}
 /* container */
 section {
   width: 100%;
