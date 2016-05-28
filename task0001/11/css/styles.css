@@ -1,3 +1,225 @@
+nav ul, .labels ul, .columns ul, article.module section ul, .articles article ul.imgs {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
 
+.labels ul figure img, .columns ul li figure img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.labels, article.module, .articles article {
+  padding-left: .3rem;
+  padding-right: .3rem; }
+
+body {
+  margin: 0;
+  font-size: 13px;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  color: #333; }
+  [data-dpr='1'] body {
+    font-size: 13px; }
+  [data-dpr='2'] body {
+    font-size: 26px; }
+  [data-dpr='3'] body {
+    font-size: 39px; }
+  body > header {
+    height: 1.15rem;
+    line-height: 1.15rem;
+    background-color: #91D4DA;
+    position: relative; }
+    body > header h1, body > header a {
+      color: white; }
+      [data-dpr='1'] body > header h1, [data-dpr='1'] body > header a {
+        font-size: 16px; }
+      [data-dpr='2'] body > header h1, [data-dpr='2'] body > header a {
+        font-size: 32px; }
+      [data-dpr='3'] body > header h1, [data-dpr='3'] body > header a {
+        font-size: 48px; }
+    body > header a.goback {
+      position: absolute;
+      left: 0.3rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      text-decoration: none; }
+      body > header a.goback img {
+        vertical-align: sub; }
+        [data-dpr='1'] body > header a.goback img {
+          height: 20px; }
+        [data-dpr='2'] body > header a.goback img {
+          height: 40px; }
+        [data-dpr='3'] body > header a.goback img {
+          height: 60px; }
+    body > header h1 {
+      margin: 0;
+      text-align: center; }
+
+figure {
+  margin: 0;
+  padding: 0;
+  display: block; }
+
+.body {
+  max-width: 10rem;
+  margin: 0 auto; }
+  .body > .banner {
+    width: 100%;
+    display: block; }
+
+nav {
+  height: 1.15rem;
+  background-color: #fff; }
+  nav ul {
+    display: flex;
+    height: 100%;
+    line-height: 1.15rem; }
+    nav ul li {
+      flex: 1;
+      color: #656565;
+      text-align: center;
+      display: inline-block; }
+      nav ul li.active {
+        border-bottom: 0.1rem solid #91D4DA; }
+
+.labels {
+  background-color: #fff; }
+  .labels ul {
+    border-bottom: 0.05rem solid #ECECEC;
+    display: flex; }
+    .labels ul li {
+      flex: 1;
+      text-align: center;
+      padding-top: 0.45rem;
+      padding-bottom: 0.5rem; }
+    .labels ul figure {
+      width: 1.2rem;
+      height: 1.2rem;
+      margin: 0 auto;
+      background: #00c7d6;
+      border-radius: 100%;
+      position: relative; }
+      .labels ul figure img {
+        width: 0.61rem;
+        height: 0.8rem; }
+    .labels ul p {
+      padding-top: 0.45rem;
+      margin: 0; }
+
+.columns {
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem; }
+  .columns ul {
+    display: flex; }
+    .columns ul li {
+      flex: 1;
+      text-align: center; }
+      .columns ul li:not(:last-child) {
+        border-right: 0.05rem solid #ECECEC; }
+      .columns ul li figure {
+        height: 2rem;
+        position: relative; }
+        .columns ul li figure img {
+          width: 1.7rem; }
+      [data-dpr='1'] .columns ul li h2 {
+        font-size: 18px; }
+      [data-dpr='2'] .columns ul li h2 {
+        font-size: 36px; }
+      [data-dpr='3'] .columns ul li h2 {
+        font-size: 54px; }
+      .columns ul li h3 {
+        color: #5b5b5b; }
+        [data-dpr='1'] .columns ul li h3 {
+          font-size: 14px; }
+        [data-dpr='2'] .columns ul li h3 {
+          font-size: 28px; }
+        [data-dpr='3'] .columns ul li h3 {
+          font-size: 42px; }
+
+article.module {
+  background-color: #fff;
+  margin-top: 0.35rem; }
+  article.module header {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    border-bottom: 0.05rem solid #ECECEC;
+    margin-bottom: 0.4rem; }
+    [data-dpr='1'] article.module header {
+      font-size: 16px; }
+    [data-dpr='2'] article.module header {
+      font-size: 32px; }
+    [data-dpr='3'] article.module header {
+      font-size: 48px; }
+  article.module section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-bottom: 0.3rem; }
+    article.module section img {
+      width: 2.43rem;
+      height: 2.27rem;
+      border: 0.02rem solid #feb832; }
+    article.module section ul {
+      width: 6.55rem;
+      height: 2.27rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: space-between; }
+    article.module section li {
+      width: 3.2rem;
+      height: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      background-color: #f8f8f8; }
+
+.articles {
+  background-color: #fff;
+  margin-top: 0.35rem; }
+  .articles article {
+    border-bottom: 0.05rem solid #ECECEC;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    display: flex; }
+    .articles article > img {
+      width: 2.8rem;
+      height: 2rem;
+      margin-right: 0.3rem; }
+    .articles article section {
+      flex: 1;
+      display: flex;
+      flex-direction: column; }
+    .articles article header {
+      flex: 1; }
+      [data-dpr='1'] .articles article header {
+        font-size: 16px; }
+      [data-dpr='2'] .articles article header {
+        font-size: 32px; }
+      [data-dpr='3'] .articles article header {
+        font-size: 48px; }
+    .articles article aside {
+      color: #c6c6c6; }
+      [data-dpr='1'] .articles article aside {
+        font-size: 13px; }
+      [data-dpr='2'] .articles article aside {
+        font-size: 26px; }
+      [data-dpr='3'] .articles article aside {
+        font-size: 39px; }
+    .articles article ul.imgs {
+      display: flex;
+      margin-top: 0.2rem; }
+      .articles article ul.imgs li {
+        flex: 1;
+        margin: 0.04rem; }
+        .articles article ul.imgs li img {
+          width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */
