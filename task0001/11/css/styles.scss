@@ -1,0 +1,41 @@
+@function size($size) {
+  $width: 1000;
+  $scale: 10;
+  @return ($size / $width * $scale) * 1rem;
+}
+
+$main-color: #91D4DA;
+$border-color: #ECECEC;
+$border: size(5) solid $border-color;
+
+%init-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+%center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+%row {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+%space-wrap {
+  padding-left: .3rem;
+  padding-right: .3rem;
+}
+
+@mixin data-dpr($field, $val) {
+  
+}
