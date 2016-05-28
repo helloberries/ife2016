@@ -1,0 +1,24 @@
+{
+  "name": "ife2016",
+  "version": "1.0.0",
+  "description": "ife2016",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helloberries/ife2016.git"
+  },
+  "keywords": [
+    "ife"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helloberries/ife2016/issues"
+  },
+  "homepage": "https://github.com/helloberries/ife2016#readme"
+}
